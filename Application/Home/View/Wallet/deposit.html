@@ -1,0 +1,285 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/wallet_a67d39a6b6.css">
+<div class="container">
+    <div class="currency-tabs">
+        <a href="{:U('Wallet/deposit',array('type'=>'wkc'))}" class="tab {$xnb==btc?'active':''}">WKC</a>
+
+    </div>
+    <div class="panel">
+        <div class="h3">钱包可用余额: <span class="link available"> {$moneyinfo.$xnb}</span> {$xnb|strtoupper}</div>
+        <div class="wallet-view"><span class="s-text available">可用资产: <span class="link">{$moneyinfo.$xnb}</span> {$xnb|strtoupper}</span><span class="s-text locked">冻结资产: <span>{$moneyinfo.$xnbd}</span> {$xnb|strtoupper}</span><span class="s-text total">总资产: <span class="link">{$moneyinfo[$xnb]+$moneyinfo[$xnbd]}</span> {$xnb|strtoupper}</span></div>
+</div>
+    <div class="tabs clear-float">
+        <div class="tab get actived">接收 {$xnb|strtoupper}</div>
+        <div class="tab send ">发送 {$xnb|strtoupper}</div>
+    </div>
+
+    <div class="panel clear-float">
+        <div class="btc-get ">
+            <div class="address">接收地址: <span>{$qianbao}</span><a class="icon-qrcode"></a>
+            </div>
+            <a id="codea"></a>
+            <if condition="$_GET['type'] eq 'wkc'">
+                <p><a class="btn zr">我已转入</a></p>
+                <p>请使用您绑定链克钱包地址向{$qianbao}转帐,然后点击我已转入</p>
+            </if>
+            <div class="tips-panel">温馨提示：在虚拟币网络接收虚拟币通常需要等待一段时间。我们会在收到虚拟币网络1个确认后给您入账。在平台内相互转账是实时到账且免费的。</div>
+            <div class="panel-head">交易记录</div>
+            <div class="transactions-panel">
+                <table class="table">
+                    <tr>
+                        <td>时间</td>
+                        <td>类型</td>
+                        <td>金额</td>
+                        <td>手续费</td>
+                        <td>实际到账金额</td>
+                        <td>状态</td>
+                    </tr>
+                    <foreach name="myzr" item="v">
+                        <tr>
+                            <td>{$v.addtime|date='Y-m-d H:i:s',###}</td>
+                            <td>网络转入{$v.coinname|strtoupper}</td>
+                            <td>{$v.num}</td>
+                            <td>{$v.fee}</td>
+                            <td>{$v.mum}</td>
+                            <td>
+                                <eq name="v.status" value="1">
+
+                                    <font color="#23a800">转入成功 </font>
+
+                                    <else/>
+
+                                    正在处理
+
+                                </eq>
+                            </td>
+                        </tr>
+                    </foreach>
+
+                </table>
+
+
+                <empty name="myzr">
+                    <div class="no-record">
+                        <span class="icon-address-no-record"></span><span>暂无账户明细</span>
+                    </div>
+                </empty>
+            </div>
+
+        </div>
+        <div class="btc-send  hidden">
+            <div class="tips-panel">温馨提示：在{$coin.title}网络发送{$coin.title}，通常需要10分钟，{$coin.title}网络转账费为 <span class='block_chain_fee'>{$coin.zc_fee}%</span>；我们会先审核后再广播到{$coin.title}网络，正在处理中代表平台正在审核中，处理完毕的您可以在交易明细中查看到转账详情。在平台内与用户之间的相互转账是实时到账且免费的。</div>
+
+            <div class="normal-form form-cont clear-float">
+                <div class="form-item input-cont">
+                    <div class="input-name">发送地址: </div>
+                    <input  type="text" name="address" validate check-type="address" class="input" placeholder="请输入正确的地址">
+                    <div class="form-tips"></div>
+                    <div class="error-msg">请输入正确的地址</div>
+                </div>
+                <div class="form-item input-cont">
+                    <div id="reserve" style="display: none"></div>
+                    <div class="input-name">数量: </div>
+                    <input type="number" name="quantity" validate check-type="quantity" class="input" placeholder="发送数量，本次最多可发送 ">
+                    <div class="form-tips"></div>
+                    <div class="error-msg">请输入正确的数量，您最多发送</div>
+                </div>
+                <div class="form-item input-cont">
+                    <div class="input-name" type="password">资金密码: </div>
+                    <input type="text" name="password" validate check-type="password1" class="input" onfocus="this.type='password'" placeholder="请输入资金密码">
+                    <div class="form-tips"></div>
+                    <div class="error-msg"></div>
+                </div>
+
+                <if condition="$ga neq null">
+                    <div class="form-item input-cont">
+                        <div class="input-name" type="ga">谷歌6位验证码: </div>
+                        <input type="text" name="ga" validate check-type="ga" class="input" onfocus="this.type='ga'" placeholder="请输入谷歌6位密码">
+                        <div class="form-tips"></div>
+                        <div class="error-msg"></div>
+                    </div>
+                </if>
+
+                <div class="form-item input-cont">
+                    <div class="input-name">备注: </div>
+                    <input type="text" name="message" class="input">
+                    <div class="form-tips"></div>
+                    <div class="error-msg"></div>
+                </div>
+
+                <a  {$coin['zc_jz']?'id="sendBtc"':''} class="btn submit  {$coin['zc_jz']?'':'disable'}" >{$coin['zc_jz']?'提交':'当前禁止转出'}</a>
+
+            </div>
+            <div class="panel-head">交易记录</div>
+            <div class="panel transactions-panel">
+                <table class="table table-hover">
+                    <tr>
+                       <td>时间</td>
+                       <td>类型</td>
+                       <td>金额</td>
+                       <td>手续费</td>
+                       <td>实际到账金额</td>
+                       <td>状态</td>
+                    </tr>
+                    <foreach name="myzc" item="v">
+                        <tr>
+                            <td>{$v.addtime|date='Y-m-d H:i:s',###}</td>
+                            <td>网络转出{$v.coinname|strtoupper}</td>
+                            <td>{$v.num}</td>
+                            <td>{$v.fee}</td>
+                            <td>{$v.mum}</td>
+                            <td>
+                              <eq name="v.status" value="1">
+
+                                <font color="#23a800">转出成功 </font>
+
+                                <else/>
+
+                                正在处理
+
+                            </eq>
+                            </td>
+                        </tr>
+                    </foreach>
+                </table>
+                <empty name="myzc">
+                    <div class="no-record">
+                        <span class="icon-address-no-record"></span><span>暂无账户明细</span>
+                    </div>
+                </empty>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<include file="Public:footer"/>
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.qrcode.min.js"></script>
+<script>
+    function ck() {
+        $.get("{:U('Wallet/checkwkcpay')}", function (data) {
+            if (data.status == 1) {
+                alert('充值成功！');
+                window.location.reload();
+            } else {
+                setTimeout("ck()", 20000);
+            }
+        })
+    }
+
+    $('.zr').click(function () {
+        layer.msg('支付确认中，预计30秒内完成', {icon: 16, time: 60000, shade: 0.5});
+        ck();
+    });
+    $('.get').click(function () {
+         $('.send').removeClass('actived');
+         $('.btc-send').addClass('hidden');
+        $('.get').addClass('actived');
+        $('.btc-get').removeClass('hidden');
+    });
+
+    $('.send').click(function () {
+        $('.get').removeClass('actived');
+        $('.btc-get').addClass('hidden');
+        $('.send').addClass('actived');
+        $('.btc-send').removeClass('hidden');
+    })
+
+
+    $('#codea').qrcode({
+
+        render: "table", //table方式
+
+        width: 100, //宽度
+
+        height: 100, //高度
+
+        text: "{$qianbao}" //任意内容
+
+    }); //任意字符串
+
+    $('#sendBtc').click(function () {
+         var address=$('[name=address]').val();
+         var num=$('[name=quantity]').val();
+         var password=$('[name=password]').val();
+         var message=$('[name=message]').val();
+         if(address==''){
+             layer.msg('发送地址不能为空', {
+                 icon: 2
+             });
+             return false;
+         }
+        if(num==''){
+            layer.msg('数量不能为空', {
+                icon: 2
+            });
+            return false;
+        }
+        if(!/^(\d|[1-9]\d+)(\.\d+)?$/.test(num)){
+            layer.msg('数量不正确', {
+                icon: 2
+            });
+            return false;
+        }
+        if(password==''){
+            layer.msg('资金密码不能为空', {
+                icon: 2
+            });
+            return false;
+        }
+
+        <if condition="$ga neq null">
+            var code=$('[name=ga]').val();
+            if(code==''){
+                layer.msg('谷歌验证码不能为空', {
+                    icon: 2
+                });
+                return false;
+            }
+        </if>
+
+
+        $.post('{:U("Wallet/withdraw")}',{
+            address:address,
+            num:num,
+            password:password,
+            message:message,
+            coin:'{$xnb}',
+            <if condition="$ga neq null">
+                code:code
+           </if>
+        },function (data) {
+              if(data.status){
+                  layer.load();
+                  setTimeout(function(){
+                      layer.closeAll('loading');
+                      layer.msg(data.info, {
+                          icon: 1
+                      },function(){
+                          location.reload();
+                      });
+                  }, 2000);
+
+              } else {
+                  layer.load();
+                  setTimeout(function(){
+                      layer.closeAll('loading');
+                      layer.msg(data.info, {
+                          icon: 2
+                      });
+                  }, 2000);
+
+              }
+        });
+
+    });
+
+        $('.filter a').click(function () {
+            $('.filter a').removeClass('actived');
+            $(this).addClass('actived');
+            where=$(this).attr('type');
+        })
+
+
+</script>

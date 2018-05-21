@@ -1,0 +1,61 @@
+<include file="Public:header"/>
+<include file="Setting:left"/>
+<div class="fr right-wrap">
+    <div class="setting-title">安全设置</div>
+    <div class="setting-panel secity-box">
+        <ul class="safe-list">
+            <li class="safe-item money-pw  {$moneypwd?active:''}">
+                <div class="icon-money-pw"></div>
+                <div class="fl">
+                    <div class="opt-title">资金密码</div>
+                    <div class="opt-decs">提现、修改安全设置时输入</div>
+                </div>
+                <div class="fr">
+
+                   <!-- <a href="" class="btn line hasset">忘记资金密码</a>-->
+                    <if condition="$moneypwd != null">
+                       <a href="{:U('Setting/moneypwd')}" class="btn line hasset">修改</a>
+                    <else/>
+                        <a href="{:U('Setting/setmoneypwd')}" class="btn noset">立即设置</a>
+                    </if>
+
+                </div>
+                <div class="clear"></div>
+            </li>
+
+
+
+            <li class="safe-item login-pw active">
+                <div class="icon-login-pw"></div>
+                <div class="fl">
+                    <div class="opt-title">登录密码</div>
+                    <div class="opt-decs">用于登录账户时输入</div>
+                </div>
+                <div class="fr">
+                    <a href="{:U('Setting/loginpwd')}" class="btn line hasset">修改</a>
+                </div>
+                <div class="clear"></div>
+            </li>
+
+            <li class="safe-item google-auth {$google?active:''}">
+                <div class="icon-google-a"></div>
+                <div class="fl">
+                    <div class="opt-title">谷歌验证</div>
+                    <div class="opt-decs">绑定后，登录、提现、支付时需要谷歌二次验证</div>
+                </div>
+                <div class="fr">
+
+                    <if condition="$google != null">
+                          <a href="{:U('setting/jcgoogle')}" class="btn line">解除</a>
+                        <else/>
+                         <a href="{:U('setting/googleauth')}" class="btn noset">启用</a>
+                    </if>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
+<include file="Public:footer"/>

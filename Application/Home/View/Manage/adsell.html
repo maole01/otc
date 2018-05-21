@@ -1,0 +1,124 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/manage.css">
+<div class="container clear-float">
+    <div class="setting-leftmenu fl">
+        <div class="menu-head">广告管理</div>
+        <div class="menu-c">
+            <div class="icon-fold"></div>
+            <div class="menu-title">出售广告</div>
+            <div class="menu-item-cont">
+				<foreach name="coinArr" item="c">
+					<a href="__APP__/manage/adsell/type/{$c['name']|strtoupper}" class="menu-item ">{$c["name"]|strtoupper}</a>
+				</foreach>
+            </div>
+        </div>
+        <div class="menu-c bt">
+            <div class="icon-fold"></div>
+            <div class="menu-title">购买广告</div>
+            <div class="menu-item-cont">
+				<foreach name="coinArr" item="c">
+						<a href="__APP__/manage/adbuy/type/{$c['name']|strtoupper}" class="menu-item ">{$c["name"]|strtoupper}</a>
+				</foreach>
+            </div>
+        </div>
+
+    </div>
+    <div class="fr adver-wrap">
+        <div class="setting-title">
+            出售广告 > {$coinname|strtoupper}
+        </div>
+        <div class="setting-panel">
+            <div class="tabs">
+                <span class="tab current" id="up">进行中</span><span class="tab" id="down">已下架</span>
+            </div>
+            <table class="table order" id="up_table" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr class="order-head ">
+                    <th class="pl-30">编号</th>
+                    <th>广告类型</th>
+                    <th class="td-country">国家</th>
+                    <th>价格</th>
+                    <th class="td-time">创建时间</th>
+                    <th>状态</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+               <foreach name="adsell" item="v">
+                  <if condition="$v.status == 1">
+                   <tr>
+                        <td class="pl-30"><a href="{:U('Manage/editad',array('adid'=>$v['id']))}" class="link">{$v.id}</a></td>
+                        <td>出售 {$v.coin|strtoupper=###}</td>
+                        <td class="td-country">{$v.country|strtoupper=###}</td>
+                        <td>{$v.price} {$v.currency|strtoupper=###}</td>
+                        <td class="td-time">{$v.addtime|date='Y-m-d H:i:s',###}</td>
+                        <td class="red-text">进行中</td>
+                        <td class="pr-30 ta-r"><a href="{:U('Manage/editad',array('adid'=>$v['id']))}" class="btn ">编辑</a><a class="btn ground" href="javascript:grounp({$v.id});">下架</a></td>
+                    </tr>
+                  </if>
+               </foreach>
+                </tbody>
+            </table>
+
+            <table class="table order  hidden" id="down_table" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr class="order-head ">
+                    <th class="pl-30">编号</th>
+                    <th>广告类型</th>
+                    <th class="td-country">国家</th>
+                    <th>价格</th>
+                    <th class="td-time">创建时间</th>
+                    <th>状态</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <foreach name="adsell" item="v">
+                    <if condition="$v.status == 0">
+                        <tr>
+                            <td class="pl-30"><a href="{:U('Manage/editad',array('adid'=>$v['id']))}" class="link">{$v.id}</a></td>
+                            <td>出售 {$v.coin|strtoupper=###}</td>
+                            <td class="td-country">{$v.country|strtoupper=###}</td>
+                            <td>{$v.price} {$v.currency|strtoupper=###}</td>
+                            <td class="td-time">{$v.addtime|date='Y-m-d H:i:s',###}</td>
+                            <td class="red-text">已下架</td>
+                            <td class="pr-30 ta-r"><a href="{:U('Manage/editad',array('adid'=>$v['id']))}" class="btn ">编辑</a><a class="btn ground" href="javascript:grounp({$v.id});">重新上架</a></td>
+                        </tr>
+                    </if>
+                </foreach>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<include file="Public:footer"/>
+
+<script>
+    $('#up').click(function () {
+        $('#down').removeClass('current');
+        $('#down_table').addClass('hidden');
+        $('#up').addClass('current');
+        $('#up_table').removeClass('hidden');
+    })
+
+    $('#down').click(function () {
+        $('#up').removeClass('current');
+        $('#up_table').addClass('hidden');
+        $('#down').addClass('current');
+        $('#down_table').removeClass('hidden');
+    })
+
+    function grounp(adid) {
+        $.post('{:U("Manage/showorhide")}',{adid:adid},function (data) {
+               if(data.status){
+                   layer.alert(data.info,{icon: 1});
+                   setTimeout("location.reload()",1000);
+               } else {
+                   layer.alert(data.info);
+                   setTimeout("location.reload()",1000);
+               }
+        })
+    }
+</script>

@@ -1,0 +1,326 @@
+<include file="Public:header"/>
+<include file="Setting:left"/>
+<div class="fr right-wrap">
+    <div class="setting-title">身份验证</div>
+    <div class="setting-panel">
+        <div class="tips-area">
+            <span class="icon-warning-1"></span>
+
+            为确保交易安全，保障您的合法权益，请您完成身份验证！我们提供安全高效实时联网的官方身份认证服务，具有更高级别的安全保护。身份验证一旦成功，不予修改和解除认证。建议您谨慎选择，真实填写。
+
+        </div>
+        <div class="real-name-cont">
+            <div class="head">
+                <div class="expand">
+                    <span class="text-expand">展开</span><span class="text-close">收起</span><span class="icon-expand"></span>
+                </div>
+                <span class="icon-id-card "></span>
+                <div class="head-title">
+                    <div class="title-1">中国大陆身份证
+                        {$userinfo['idcard']?'<span class="status-tag">已验证</span>':'<span class="status-tag">未验证</span>'}
+                    </div>
+                    <div class="decs">适用于大多数中国大陆用户</div>
+                </div>
+            </div>
+            <div class="content normal-form form-cont clear-float">
+                <div class="form-item input-cont">
+                    <div class="input-name">姓名:</div>
+                    <input type="text" validate check-type="real_name" name="real_name" id="name" class="input" placeholder="请输入真实姓名" value="{$userinfo['truename']}" {$userinfo['idcard']?'disabled':''}>
+                    <div class="form-tips"></div>
+                    <div class="error-msg">请输入真实姓名</div>
+                </div>
+
+                <div class="form-item input-cont">
+                    <div class="input-name">身份证号码:</div>
+                    <input type="text" validate check-type="id_card" name="number" id="cardnum" class="input" placeholder="请输入身份证号码" value="{$userinfo['idcard']}"  {$userinfo['idcard']?'disabled':''}>
+                    <div class="form-tips"></div>
+                    <div class="error-msg">请输入正确的身份证号码，15位或18位</div>
+                </div> 
+				<div class="form-item input-cont">
+                    <div class="input-name">银行卡号:</div>
+                    <input type="text" validate check-type="id_card" name="number" id="bankcard" class="input" placeholder="请输入银行号码" value="{$userinfo['idcard']}"  {$userinfo['idcard']?'disabled':''}>
+                    <div class="form-tips"></div>
+                    <div class="error-msg">请输入正确的银行卡号码。</div>
+                </div>
+
+                <div class="form-item input-cont">
+                    <div class="input-name">上传本人照片:</div>
+                    <input type="file" name="photo" size="15"  enctype="multipart/form-data" maxlength="100">
+                    <div class="form-tips"></div>
+
+                </div>
+
+                {$userinfo['idcard']?'':'<a class="btn submit" onclick="checkCard()">确定</a>'}
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="dialog" id="success" style="display: none;">
+    <div class="dialog-msg">实名认证设置成功</div>
+</div>
+</div>
+<include file="Public:footer"/>
+
+<script>
+    $('.expand').click(function(){
+        if($('.real-name-cont').hasClass("current")){
+            $('.real-name-cont').removeClass('current');
+        }else{
+            $('.real-name-cont').addClass('current');
+        }
+    });
+
+    var vcity={ 11:"北京",12:"天津",13:"河北",14:"山西",15:"内蒙古",
+        21:"辽宁",22:"吉林",23:"黑龙江",31:"上海",32:"江苏",
+        33:"浙江",34:"安徽",35:"福建",36:"江西",37:"山东",41:"河南",
+        42:"湖北",43:"湖南",44:"广东",45:"广西",46:"海南",50:"重庆",
+        51:"四川",52:"贵州",53:"云南",54:"西藏",61:"陕西",62:"甘肃",
+        63:"青海",64:"宁夏",65:"新疆",71:"台湾",81:"香港",82:"澳门",91:"国外"
+    };
+
+    checkCard = function()
+    {
+/*
+            var filepath = $("input[name='photo']").val();
+            if (filepath == 0)
+            {
+                layer.msg("请选择要上传的照片！", {
+                    icon: 2
+                });
+                return false;
+            }
+            var extStart = filepath.lastIndexOf(".");
+            var ext = filepath.substring(extStart, filepath.length).toUpperCase();
+            if (ext != ".BMP" && ext != ".PNG" && ext != ".GIF" && ext != ".JPG" && ext != ".JPEG") {
+                layer.msg("图片限于bmp,png,gif,jpeg,jpg格式", {
+                    icon: 2
+                });
+                return false;
+            }
+            var file_size = $("input[name='photo']")[0].files[0].size;
+            var size = file_size / 1024;
+            alert(size);
+            if (size > 10240) {
+                layer.msg("上传的图片大小不能超过10M！", {
+                    icon: 2
+                });
+                return false;
+            }
+
+*/
+        var bankcard = $('#bankcard').val();
+		if(!isBankCard(bankcard)){
+			layer.msg('请输入正确的银行卡号码。', {
+                icon: 2
+            });
+            document.getElementById('cardnum').focus();
+            return false;
+		}
+        var truename=document.getElementById("name").value;
+        var reg = /^[\u4e00-\u9fa5]{2,4}$/i;
+        if (!reg.test(truename)) {
+            layer.msg("请输入真实姓名，只能是2-4个汉字！", {
+                icon: 2
+            });
+            document.getElementById('name').focus();
+            return false;
+        }
+        else{
+            var card = document.getElementById('cardnum').value;
+            //是否为空
+            if(card === '')
+            {
+                layer.msg('请输入正确的身份证号码，15位或18位', {
+                    icon: 2
+                });
+                document.getElementById('cardnum').focus();
+                return false;
+            }
+            //校验长度，类型
+            if(isCardNo(card) === false)
+            {
+                layer.msg('请输入正确的身份证号码，15位或18位', {
+                    icon: 2
+                });
+                document.getElementById('cardnum').focus();
+                return false;
+            }
+            //检查省份
+            if(checkProvince(card) === false)
+            {
+                layer.msg('请输入正确的身份证号码，15位或18位', {
+                    icon: 2
+                });
+                document.getElementById('cardnum').focus();
+                return false;
+            }
+            //校验生日
+            if(checkBirthday(card) === false)
+            {
+                layer.msg('请输入正确的身份证号码，15位或18位', {
+                    icon: 2
+                });
+                document.getElementById('cardnum').focus();
+                return false;
+            }
+            //检验位的检测
+            if(checkParity(card) === false)
+            {
+                layer.msg('请输入正确的身份证号码，15位或18位', {
+                    icon: 2
+                });
+                document.getElementById('cardnum').focus();
+                return false;
+            }
+            var real_name=$("#name").val();
+            var number=$('#cardnum').val();
+            $.post("{:U('Setting/verification')}",{real_name:real_name,number:number,file_path:file_path},function(data){
+                if (data.status == 1) {
+                    layer.msg(data.info, {
+                        icon: 1,
+                    },function () {
+                       location.href="{:U('Setting/verification')}";
+                    });
+                } else {
+                    layer.msg(data.info, {
+                        icon: 2
+                    });
+                }
+            });
+        }
+
+    };
+
+
+    //检查号码是否符合规范，包括长度，类型
+    isCardNo = function(card)
+    {
+        //身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
+        var reg = /(^\d{15}$)|(^\d{17}(\d|X)$)/;
+        if(reg.test(card) === false)
+        {
+            return false;
+        }
+
+        return true;
+    };
+
+    //取身份证前两位,校验省份
+    checkProvince = function(card)
+    {
+        var province = card.substr(0,2);
+        if(vcity[province] == undefined)
+        {
+            return false;
+        }
+        return true;
+    };
+
+    //检查生日是否正确
+    checkBirthday = function(card)
+    {
+        var len = card.length;
+        //身份证15位时，次序为省（3位）市（3位）年（2位）月（2位）日（2位）校验位（3位），皆为数字
+        if(len == '15')
+        {
+            var re_fifteen = /^(\d{6})(\d{2})(\d{2})(\d{2})(\d{3})$/;
+            var arr_data = card.match(re_fifteen);
+            var year = arr_data[2];
+            var month = arr_data[3];
+            var day = arr_data[4];
+            var birthday = new Date('19'+year+'/'+month+'/'+day);
+            return verifyBirthday('19'+year,month,day,birthday);
+        }
+        //身份证18位时，次序为省（3位）市（3位）年（4位）月（2位）日（2位）校验位（4位），校验位末尾可能为X
+        if(len == '18')
+        {
+            var re_eighteen = /^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$/;
+            var arr_data = card.match(re_eighteen);
+            var year = arr_data[2];
+            var month = arr_data[3];
+            var day = arr_data[4];
+            var birthday = new Date(year+'/'+month+'/'+day);
+            return verifyBirthday(year,month,day,birthday);
+        }
+        return false;
+    };
+
+    //校验日期
+    verifyBirthday = function(year,month,day,birthday)
+    {
+        var now = new Date();
+        var now_year = now.getFullYear();
+        //年月日是否合理
+        if(birthday.getFullYear() == year && (birthday.getMonth() + 1) == month && birthday.getDate() == day)
+        {
+            //判断年份的范围（3岁到100岁之间)
+            var time = now_year - year;
+            if(time >= 3 && time <= 100)
+            {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    };
+	
+	/**
+	 * 银行卡验证
+	 * @param {*string} str
+	 */
+	function isBankCard(str) {
+		var regex = /^(998801|998802|622525|622526|435744|435745|483536|528020|526855|622156|622155|356869|531659|622157|627066|627067|627068|627069)\d{10}$/;
+		if (regex.test(str)) {
+			return true;
+		}
+		return false;
+	}
+	
+    //校验位的检测
+    checkParity = function(card)
+    {
+        //15位转18位
+        card = changeFivteenToEighteen(card);
+        var len = card.length;
+        if(len == '18')
+        {
+            var arrInt = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2);
+            var arrCh = new Array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2');
+            var cardTemp = 0, i, valnum;
+            for(i = 0; i < 17; i ++)
+            {
+                cardTemp += card.substr(i, 1) * arrInt[i];
+            }
+            valnum = arrCh[cardTemp % 11];
+            if (valnum == card.substr(17, 1))
+            {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    };
+
+    //15位转18位身份证号
+    changeFivteenToEighteen = function(card)
+    {
+        if(card.length == '15')
+        {
+            var arrInt = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2);
+            var arrCh = new Array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2');
+            var cardTemp = 0, i;
+            card = card.substr(0, 6) + '19' + card.substr(6, card.length - 6);
+            for(i = 0; i < 17; i ++)
+            {
+                cardTemp += card.substr(i, 1) * arrInt[i];
+            }
+            card += arrCh[cardTemp % 11];
+            return card;
+        }
+        return card;
+    };
+</script>

@@ -1,0 +1,79 @@
+<include file="Public:header"/>
+<include file="Setting:left"/>
+<div class="fr right-wrap">
+    <div class="setting-title">身份验证</div>
+    <div class="setting-panel">
+        <div class="tips-area">
+            <span class="icon-warning-1"></span>
+
+            为确保交易安全，保障您的合法权益，请绑定正确的链克钱包地址 。
+
+        </div>
+        <div class="real-name-cont current">
+            <div class="content normal-form form-cont clear-float">
+
+                <div class="form-item input-cont">
+                    <div class="input-name">链克钱包地址:</div>
+                    <input type="text" style="width:500px;" name="wkcaddr" id="wkcaddr" class="input"
+                           placeholder="请输入链克钱包地址" value="{$userinfo['wkcaddress']}" {$userinfo['wkcaddress']?'disabled':''}>
+                    <div class="form-tips"></div>
+                    <div class="error-msg">请输入正确的链克钱包地址</div>
+                    <if condition="$userinfo.wkcaddress eq ''">
+                        <p>使用您输入的钱包地址,向 <span id="qb_wkcaddr">{:C("WKC_PAY_ADDRESS")[array_rand(C("WKC_PAY_ADDRESS"))]}</span>转入 <span id="wkc_zhi">{:mt_rand(111,999)/10000}</span>链克，30秒内审核成功</p>
+                    </if>
+                </div>
+                {$userinfo['wkcaddress']?'<a class="btn  jb">解绑</a>':' <a class="btn submit">确定</a>'}
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+<include file="Public:footer"/>
+
+<script>
+    $('.submit').click(function () {
+        var wkcaddr = $('#wkcaddr').val();
+        var qb_wkcaddr = $('#qb_wkcaddr').text();
+        var wkc_zhi = $('#wkc_zhi').text();
+        if (wkcaddr.length < 20) {
+            layer.msg('请输入正确的链克地址。', {
+                icon: 2
+            });
+            return false;
+        }
+        $.post('wkcaddr', {wkcaddr: wkcaddr,qb_wkcaddr: qb_wkcaddr,wkc_zhi: wkc_zhi}, function (data) {
+            if (data.status == 1) {
+                layer.msg(data.info, {
+                    icon: 1
+                }, function () {
+                    location.href = "{:U('Setting/wkcaddr')}";
+                });
+            } else {
+                layer.msg(data.info, {
+                    icon: 2
+                });
+            }
+        })
+    });
+
+    $('.jb').click(function () {
+        layer.open({
+            content: " <div class=\"form-item input-cont\">请输入密码: <input style='width:150px;border:solid 1px silver;height:30px;' class='input' type='password' id='pwd' ></div>",
+            yes: function (index) {
+                var pwd = $('#pwd').val();
+                $.get('{:U("setting/wkcaddr")}', {action: "unbind", pwd: pwd}, function (data) {
+                    layer.msg(data.info, function () {
+                        document.location.reload();
+                    });
+
+                });
+            }
+        });
+
+    });
+
+
+</script>

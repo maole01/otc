@@ -1,0 +1,72 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/manage.css">
+<div class="container clear-float">
+    <div class="setting-leftmenu fl">
+        <div class="menu-head">广告管理</div>
+        <div class="menu-c">
+            <div class="icon-fold"></div>
+            <div class="menu-title">出售广告</div>
+            <div class="menu-item-cont">
+                <a href="/manage/adsell/BTC" class="menu-item active">BTC</a>
+            </div>
+        </div>
+        <div class="menu-c bt">
+            <div class="icon-fold"></div>
+            <div class="menu-title">购买广告</div>
+            <div class="menu-item-cont">
+                <a href="/manage/adbuy/BTC" class="menu-item ">BTC</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="fr">
+        <div class="setting-title">
+            出售广告 > BTC
+        </div>
+        <div class="setting-panel">
+            <div class="loading" style="display: none;">
+                <img class="loading-img" src="/static/imgs/loading_new.gif">
+            </div>
+            <div class="tabs">
+                <span class="tab current" status="ACTIVE">进行中</span><span class="tab" status="DISABLED">已下架</span>
+            </div>
+            <table class="table order ACTIVE" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr class="order-head ">
+                    <th class="pl-30">编号</th>
+                    <th>广告类型</th>
+                    <th>国家</th>
+                    <th>价格</th>
+                    <th>溢价比例</th>
+                    <th>创建时间</th>
+                    <th>状态</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td class="pl-30"><a href="/ad-detail/31155" class="link">31155</a></td>
+                    <td>出售 BTC</td>
+                    <td>CN</td>
+                    <td>52550.69 CNY</td>
+                    <td>1%</td>
+                    <td>2017-11-17 16:56:35</td>
+                    <td class="red-text">进行中</td>
+                    <td class="pr-30 ta-r"><a href="/edit-ad/31155" class="btn ">编辑</a><a class="btn reground" id=31155>重新上架</a><a class="btn ground" id=31155>下架</a></td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <div class="no-record" style="display:none">
+                <div class="icon-no-record"></div>
+                <div class="text-no-record">暂无广告记录</div>
+            </div>
+
+            <div class="pagination" total="1" limit="10" ></div>
+        </div>
+    </div>
+</div>
+
+<include file="Public:footer"/>

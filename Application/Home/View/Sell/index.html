@@ -1,0 +1,96 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/buy_2a0acc48d5.css">
+<style>
+    .coin-tab{
+        border-bottom: 1px solid #d7dcde;
+        position: relative;
+        font-size: 0;
+        margin-bottom: 30px;
+        margin: 0 auto;
+    }
+    .coin-tab .coin.current {
+        color: #1798f2;
+        font-weight: 700;
+        border-color: #1798f2;
+    }
+    .coin-tab .coin {
+        width: 150px;
+        text-align: center;
+        line-height: 42px;
+        height: 44px;
+        box-sizing: border-box;
+        font-size: 16px;
+        color: #25495e;
+        display: inline-block;
+        border-bottom: 2px solid transparent;
+    }
+</style>
+<div class="container">
+    <div class="coin-tab">
+       <foreach name="coinArr" item="c">
+			<a href="__APP__/buy/index/type/{$c['name']|strtoupper}" class="coin {$coin_type=='9dc'?'current':''}">{$c["title"]}({$c["name"]|strtoupper})</a>
+		</foreach>
+        <a href="#" class="coin">敬请期待</a>
+    </div>
+    <table class="table buy">
+        <thead>
+        <tr>
+            <th class="pl-30">昵称</th>
+            <th>信用</th>
+            <th>付款方式</th>
+            <th>限额</th>
+            <th>价格</th>
+            <th></th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <if condition="!empty($adinfo)">
+            <foreach name="adinfo" item="v">
+                <tr class="odd">
+                    <td class="head-portrait pl-30">
+                        <a href="{:U('user/view',array('id'=>$v['userid']))}" ><img class="user-head" src="{$v.ue_img}"  alt="">
+                            <span>{$v.username}</span>
+                            <span class="state <if condition='$v.zaixian eq 1'>ONLINE</if>"></span>
+                        </a>
+                        
+                        
+                    </td>
+                    <td class="td-normal">
+                        交易 {$v['userid']|getjycs=###} |
+                        好评度 {$v['userid']|gethpl=###}% | 信任 {$v['userid']|getxrrs=###}
+                    </td>
+                    <switch name="v.provider" >
+                        <case value="1"><td>银行转账</td></case>
+                        <case value="2"><td>支付宝</td></case>
+                        <case value="3"><td>微信支付</td></case>
+                        <case value="4"><td>其它</td></case>
+                    </switch>
+                    <td class="td-name">{$v.min_amount}-{$v.max_amount} {$v.currency|strtoupper=###}</td>
+                    <td class="td-price"><span style="margin-right:6px;">{$v.price}</span> {$v.currency|strtoupper=###}</td>
+                    <td class="pr-30"><a href="{:U('Addetail/index',array('adid'=>$v['adid']))}"  class="buy">出售</a></td>
+                </tr>
+            </foreach>
+            <else/>
+            <tr>
+                <td colspan="5"><div class="no-record">
+                    <div class="icon-no-record"></div>
+                    <div class="text-no-record">暂无广告</div>
+                </div></td>
+            </tr>
+        </if>
+        </tbody>
+    </table>
+
+    <div class="no-record"  style="display: none;"  >
+        <div class="icon-no-record"></div>
+        <div class="text-no-record">暂无广告</div>
+    </div>
+
+    <div class="page1" style="width:550px;height:50px">{$page}</div>
+</div>
+
+<include file="Public:footer"/>
+</body>
+</html>

@@ -1,0 +1,338 @@
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.item-box {
+	margin-top: 66px;
+}
+.item-box .trade-info h4 {
+	font-family: "Adobe黑体 Std";
+	font-size: 24px;
+}
+.item-box .trade-info .service-time {
+	margin-left: 42px;
+	padding-top: 14px;
+}
+.page1 {
+	width: 550px;
+	height: 50px;
+	margin: 80px auto;
+    color: #666;
+}
+.page1 span.current , div.page1 a{
+    border: 1px solid #dcdcdc;
+    display: block;
+    float: left;
+    font-size: 12px;
+    margin-right: 5px;
+    padding: 11px 19px;
+    text-decoration: none;
+    color: #898989;
+}
+.page1 span.current{
+    background:  #46bcf9;
+    color: #ffffff !important;
+    display: block;
+    float: left;
+    font-size: 12px;
+    cursor: pointer;
+}
+.page1 a.prev,div.page1 a.next{
+    padding: 3px 4px;
+}
+.page-content {
+	background: #fff;
+	margin-bottom: 20px;
+}
+.page-content .content_group {
+    padding: 40px 40px;
+    color: #3f3f3f;
+}
+.page-content .content_group h1 {
+    border-bottom: 2px solid #f1f1f1;
+    line-height: 60px;
+    font-size: 16px;
+}
+.page-content .content_group p {
+    font-size: 14px;
+    word-wrap: break-word;
+    color: #8994a3;
+}
+.question-box{
+    background: #fff;
+    padding: 0 30px;
+    margin-bottom: 20px;
+    min-height: 900px;
+}
+.question-box h2 {
+    font-size: 24px;
+    padding: 16px 0px;
+}
+.question-box h3 {
+    font-size: 20px;
+    line-height: 56px;
+}
+.question-box h4 {
+    font-size: 16px;
+    color: #616161;
+    margin: 0;
+    line-height: 40px;
+    font-weight: normal;
+}
+.question-box p {
+    color: #8994a3;
+    font-size: 14px;
+    line-height: 20px;
+}
+.rate-box .rate-tit {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: #2d2d2d
+}
+.invite-wrap {
+	width: 900px;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+.invite-wrap .yq-item {
+	float: left;
+    width: 266px;
+    height: 94px;
+    margin-left: 160px;
+}
+.invite-wrap .yq-item .item-left {
+	float: left;
+	width: 104px;
+	height: 94px;
+	line-height: 94px;
+	text-align: center;
+	background: rgb(32,168,218);
+	color: #fff;
+	font-size: 16px;
+}
+.invite-wrap .yq-item .item-left2 {
+	background: rgb(232,63,70);
+}
+.invite-wrap .yq-item .item-right {
+	float: left;
+    width: 162px;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+    height: 94px;
+    line-height: 94px;
+    background: #fff;
+
+}
+.invite-wrap .yq-item .item-right span {
+	font-size: 20px;
+    color: #20a8da;
+    font-weight: bold;
+    margin-right: 4px;
+}
+.invite-wrap .copy {
+	margin-top: 20px;
+	background: #fff;
+    border: 1px solid #eeeeee;
+    height: 256px;
+    width: 100%;
+}
+.invite-wrap .copy .copy-bt {
+	display: block;
+	padding-top: 16px;
+	padding-bottom: 16px;
+    font-size: 16px;
+    color: #666666;
+    text-align: center;
+}
+.invite-wrap .copy .copy-nr {
+	height: 120px;
+}
+.invite-wrap .copy .copy-nr p {
+    text-align: center;
+    color: #f7951c;
+   	padding-top: 16px;
+   	padding-bottom: 16px;
+    font-size: 16px;
+	color:#f7951c;
+}
+/*.invite-wrap .copy .copy-nr p input {
+	border: 0;
+	font-size: 16px;
+	width:550px;color:#f7951c;
+}*/
+.invite-wrap .copy .copy-nr a {
+	display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0px auto;
+    background: #fca131;
+    color: #fff;
+}
+.invite-wrap .copy .copy-bottom {
+	margin-top: 20px;
+	text-align: center;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+.invite-wrap .invite-rule {
+	  background: #fff;
+    width: 100%;
+    padding: 40px 0px;
+    margin-top: 30px;
+}
+.invite-wrap .invite-rule h3 {
+	text-align: center;
+    font-size: 24px;
+    color: #f7951c;
+    font-weight: bold;
+}
+.invite-wrap .invite-rule .in-ru {
+	margin-top: 30px;
+	font-size: 14px;
+    color: #b56e16;
+    line-height: 26px;
+    padding: 0px 36px;
+}
+.news-content {
+	min-height: 580px;
+	padding: 60px 100px;font-size: 14px
+}
+.news-tit {
+	font-size: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.notice .news-link:hover {
+	color: #b50202;
+}
+.article-box {
+	margin-top: 60px;
+}
+.news-content .details {
+	min-height: 300px;
+	margin-top: 16px;
+	font-size: 15px;
+	
+}
+.news-content .details p {
+	line-height: 28px;
+}
+.article-box li {
+	height: 36px;
+    line-height: 36px;
+
+}
+.article-box a {
+	color: #484848;;
+}
+.article-box a:hover {
+	color: #f7951c;
+}
+@media (max-width: 768px) {
+	.header .nav {
+		padding-top: 0;
+	}
+	.header-wrap {
+		height: 72px;
+	}
+	.item-box {
+		margin-top: 44px;
+	}
+	.page1 {
+		width: 90%;
+		margin: 20px auto 0;
+	}
+	.notice{
+		overflow: hidden;
+		text-overflow:ellipsis;
+		word-break: break-all; 
+	}
+	.icon-notice {
+		margin-right: 10px;
+	}
+	.news-content {
+		padding: 20px 10px;
+	}
+}
+
+@media (max-width: 414px) {
+	.header .nav-item {
+		color: #fff;
+	}
+	.site-info .site-item {
+		display: block;
+		margin: 0 auto 16px!important;
+	}
+	.site-info .site-item .desc {
+		margin-top: 10px;
+	}
+	.trade-info {
+		margin-left: 14px;
+	}
+	.item-box .item-card {
+		width: 300px;
+		height: auto;
+		float: none;
+		margin: 0 auto 30px;
+	}
+	.item-box .item-card .user-info {
+		width: 300px;
+		float: none;
+	}
+	.item-box .item-card .item-info {
+		width: 300px;
+		float: none;
+	}
+	.item-box .item-card .item-info1 {
+		float: none;
+		border-top: 0;
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 10px;
+		border-left: 1px solid #0f4671;
+	}
+	.item-box .item-card .user-info1 {
+		border-bottom-left-radius: 0px;
+		border-top-right-radius: 10px;
+	}
+	.item-box .item-card .user-info2 {
+		border-top-right-radius: 0px;
+		border-bottom-left-radius: 10px;
+	}
+	.item-box .item-card .item-info2 {
+		border-right: 1px solid #0f4671;
+		border-bottom: 0;
+		border-top-right-radius: 10px;
+		border-bottom-left-radius: 0;
+	}
+	.footer {
+		float: none;
+		height: auto;
+	}
+	.footer .container {
+		width: 100%;
+	}
+	.footer .link-box {
+		width: 90%;
+	}
+	.invite-wrap {
+		width: 96%;
+	}
+	.invite-wrap .yq-item {
+		margin-left: 10px;
+		margin-bottom: 10px;
+	}
+	.invite-wrap .copy .copy-bt {
+		width: 98%;
+		word-break: break-all;
+	}
+	.logo-wrap{width:300px;}
+
+
+}

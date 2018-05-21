@@ -1,0 +1,113 @@
+<include file="Public:header"/>
+
+<div id="main-content">
+
+    <div id="top-alert" class="fixed alert alert-error" style="display: none;">
+
+        <button class="close fixed" style="margin-top: 4px;">&times;</button>
+
+        <div class="alert-content">警告内容</div>
+
+    </div>
+
+    <div id="main" class="main">
+
+        <div class="main-title-h">
+
+            <span class="h1-title">{$username} 邀请的人</span>
+
+        </div>
+
+        <div class="data-table table-striped">
+
+            <table class="">
+
+                <thead>
+
+                <tr>
+
+                    <th class="row-selected row-selected">
+
+                        <input class="check-all" type="checkbox"/>
+
+                    </th>
+
+                    <th class="">ID</th>
+
+                    <th class="">用户名</th>
+
+                    <th class="">手机号</th>
+
+                    <th class="">真实姓名</th>
+
+                    <th class="">身份证号</th>
+
+                    <th class="">注册时间</th>
+
+                    <th class="">状态</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <notempty name="list">
+
+                    <volist name="list" id="vo">
+
+                        <tr>
+
+                            <td>
+
+                                <input class="ids" type="checkbox" name="id[]" value="{$vo.id}"/>
+
+                            </td>
+
+                            <td>{$vo.id}</td>
+
+                            <td>{$vo.username}</td>
+
+                            <td>{$vo.mobile}</td>
+
+                            <td>{$vo.truename}</td>
+
+                            <td>{$vo.idcard}</td>
+
+                            <td>{$vo.addtime|addtime}</td>
+
+                            <td>
+
+                                <eq name="vo.status" value="0">冻结</eq>
+
+                                <eq name="vo.status" value="1">正常</eq>
+
+                            </td>
+                        </tr>
+
+                    </volist>
+
+                    <else/>
+
+                    <td colspan="12" class="text-center">Oh! 暂时还没有内容!</td>
+
+                </notempty>
+
+                </tbody>
+
+            </table>
+
+            <div class="page">
+
+                <div>{$page}</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<include file="Public:footer"/>
+

@@ -1,0 +1,50 @@
+<include file="Public:header"/>
+<include file="Setting:left"/>
+<div class="fr right-wrap">
+    <div class="setting-title">您信任的人</div>
+
+    <div class="setting-panel">
+        <if condition="$trusting neq null">
+            <foreach  name="trusting" item="v">
+                <ul class="user-list" offset="0">
+                    <li class="user-item">
+                        <a href="__APP__/User/view/id/{$v.id}"><img class="user-head" src="{$v.ue_img}"></a>
+                        <div class="user-info">
+                            <a href="__APP__/User/view/id/{$v.id}" ><div class="user-name">{$v.username}</div></a>
+                        </div>
+                        <div class="poster-info-cont clear-float">
+                                    <span class="poster-info-item">
+                                      <div class="item-d">{$v.id|getjycs=###}</div>
+                                      <div class="item-n">交易次数</div>
+                                    </span>
+                            <span class="poster-info-item">
+                                      <div class="item-d">{$v.id|getxrrs=###}</div>
+                                      <div class="item-n">信任人数</div>
+                                    </span>
+                            <span class="poster-info-item">
+                                      <div class="item-d">{$v.id|gethpl=###} %</div>
+                                      <div class="item-n">好评度</div>
+                                    </span>
+                            <span class="poster-info-item">
+                                      <div class="item-d">{$v.id|getcjsl=###}+ BTC</div>
+                                      <div class="item-n">历史交易</div>
+                                    </span>
+                        </div>
+
+                    </li>
+
+
+                </ul>
+            </foreach>
+            <else/>
+            <div class="no-record">
+                <div class="icon-no-record"></div>
+                <div class="text-no-record">暂无相关信息</div>
+            </div>
+        </if>
+    </div>
+
+</div>
+</div>
+
+<include file="Public:footer"/>

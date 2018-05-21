@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<link rel="stylesheet" type="text/css" href="./Css/cache_20180118.css"/>
+		<script src='./Js/jquery-3.2.1.min.js'></script>
+		<style>
+			*{margin:0px;padding:0px;}
+			.test{
+				width: 0px;
+				height: 0px;
+				border-top: 50px solid black;
+				border-right: 50px solid transparent;
+				border-bottom: 50px solid transparent;
+				border-left: 20px solid transparent;
+			}
+			
+			#triangle-up {
+				width: 0;
+				height: 0;
+				border-left: 130px solid yellow;
+				border-right: 130px solid blue;
+				border-bottom: 120px solid red;
+			}
+			#div{  
+				background: red;  
+				width: 100px;  
+				height: 100px;  
+				position: absolute;  
+			}  
+		</style>
+	</head>
+	<body> 
+		<div style='height:300px;width:300px;position:fixed;z-index:1000;top:0px;border:1px solid red;overflow:scroll;'>
+			<div  class='cesdiv' style='height:1300px;width:1300px;border:1px solid green;'>
+				<ul class="ces" style='color:red;'>
+					<li style='border-bottom:2px solid yellow;height:100px;'>1</li>
+					<li style='border-bottom:2px solid yellow;height:100px;'>2</li>
+					<li style='border-bottom:2px solid yellow;height:100px;'>3</li>
+					<li style='border-bottom:2px solid yellow;height:100px;'>4</li>
+					<li style='border-bottom:2px solid yellow;height:100px;'>5</li>
+					<li style='border-bottom:2px solid yellow;height:100px;'>6</li>
+					<li style='border-bottom:2px solid yellow;height:100px;'>7</li>
+					<li style='border-bottom:2px solid yellow;height:100px;'>8</li>
+					<li style='border-bottom:2px solid yellow;height:100px;'>9</li>
+					<li style='border-bottom:2px solid yellow;height:100px;'>10</li>
+					<li style='border-bottom:2px solid yellow;height:100px;'></li>
+					<li style='border-bottom:2px solid yellow;height:100px;'></li>
+					<li style='border-bottom:2px solid yellow;height:100px;'></li>
+				</ul>
+			</div>
+		</div>
+		<div id='nav-triangle'>
+			<div class='logo' style='border-top-width:200px;'>
+				<a></a>
+			</div>
+			<div class='menu'>
+				<div id='nav-auto' style='background:#000;'>
+					<div>
+						<ul style='width:240px;'>
+							<li class='index'><a href='./index.html'>首页</a></li>
+							<li><a href='./abstract.html'>简介</a></li>
+							<li><a href='./access.html'>接入</a></li>
+							<li><a href='./entertainment.html'>区块链娱乐</a></li>
+						</ul>
+						<!--	logo -->
+						<div id='logo'>logo</div>
+						<ul style='width:300px;'>
+							<li><a href='./gameworld.html'>游戏世界</a></li>
+							<li><a href='./introduction.html'>平台介绍</a></li>
+							<li><a href='./aboutus.html'>关于我们</a></li>
+							<li><a href='./englishindex.html'>English</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='test' style='height:1200px;'></div>
+		<div id='triangle-up'></div>
+		<div id="div"></div>  
+	</body>
+</html>
+<script type="text/javascript">  
+    window.onload=function(){  
+        var oDiv=document.getElementById('div');  
+        var distX=0;  
+        var distY=0;  
+        oDiv.onmousedown=function(ev){  
+            var oEvent=ev||event;  
+            distX=oEvent.clientX-oDiv.offsetLeft;   //获取边界到鼠标的距离  
+            distY=oEvent.clientY-oDiv.offsetTop;  
+            document.onmousemove=function(ev){  
+                var oEvent=ev||event;  
+                var x=oEvent.clientX-distX;  
+                var y=oEvent.clientY-distY;  
+                if(x<0){  
+                    x=0;  
+                }  
+                if(y<0){  
+                    y=0;  
+                }  
+                if(x>(document.documentElement.clientWidth-oDiv.offsetWidth))  
+                {  
+                    x=document.documentElement.clientWidth-oDiv.offsetWidth;  
+                }  
+                oDiv.style.left=x+'px';    //根据鼠标位置相对定位，得到left，top值  
+                oDiv.style.top=y+'px';  
+            }  
+            document.onmouseup=function(){  
+                document.onmousemove=null;  
+                document.onmouseup=null;  
+            }  
+        }  
+                  
+    }  
+</script>  
+<script src='./Js/index.js'></script>

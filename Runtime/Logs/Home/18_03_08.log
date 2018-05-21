@@ -1,0 +1,740 @@
+[ 2018-03-08T00:19:39+08:00 ] 172.104.164.143 /.git/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001119s ]
+ERR: 无法加载控制器:.git
+
+[ 2018-03-08T00:21:35+08:00 ] 71.6.202.198 /ccvv
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+ERR: 无法加载控制器:Ccvv
+
+[ 2018-03-08T02:02:28+08:00 ] 43.226.66.44 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005012s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001084s ]
+SQL: SHOW COLUMNS FROM `cy_user_coin` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `cy_user_coin` WHERE `userid` = null LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cy_newad` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=0 ) ORDER BY price LIMIT 2   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=1 ) ORDER BY price LIMIT 2   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000235s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000326s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Use of undefined constant wkc - assumed 'wkc' /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 68 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: target /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 204 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 213 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 214 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SHOW COLUMNS FROM `cy_user` [ RunTime:0.0012s ]
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cy_order` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cy_evaluation` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=15) or (`status` = 3 and sellid=15) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 15 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=4) or (`status` = 3 and sellid=4) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032157s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001149s ]
+
+[ 2018-03-08T04:13:25+08:00 ] 141.105.71.129 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+SQL: SHOW COLUMNS FROM `cy_user_coin` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cy_user_coin` WHERE `userid` = null LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `cy_newad` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=0 ) ORDER BY price LIMIT 2   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=1 ) ORDER BY price LIMIT 2   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000358s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Use of undefined constant wkc - assumed 'wkc' /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 68 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: target /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 204 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 213 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 214 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SHOW COLUMNS FROM `cy_user` [ RunTime:0.0016s ]
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cy_order` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cy_evaluation` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=15) or (`status` = 3 and sellid=15) ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 15 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=4) or (`status` = 3 and sellid=4) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034467s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034548s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000752s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001092s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001255s ]
+
+[ 2018-03-08T04:13:26+08:00 ] 141.105.71.129 /HNAP1/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+ERR: 无法加载控制器:HNAP1
+
+[ 2018-03-08T05:00:00+08:00 ] 220.189.249.97 /manager/html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001115s ]
+ERR: 无法加载控制器:Manager
+
+[ 2018-03-08T10:46:48+08:00 ] 112.66.98.154 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+SQL: SHOW COLUMNS FROM `cy_user_coin` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `cy_user_coin` WHERE `userid` = null LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cy_newad` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=0 ) ORDER BY price LIMIT 2   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=1 ) ORDER BY price LIMIT 2   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000267s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000375s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Use of undefined constant wkc - assumed 'wkc' /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 68 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: target /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 204 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 213 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 214 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SHOW COLUMNS FROM `cy_user` [ RunTime:0.0014s ]
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cy_order` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cy_evaluation` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=15) or (`status` = 3 and sellid=15) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 15 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=4) or (`status` = 3 and sellid=4) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033903s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033988s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001079s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001185s ]
+
+[ 2018-03-08T13:16:55+08:00 ] 123.249.76.125 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
+SQL: SHOW COLUMNS FROM `cy_user_coin` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `cy_user_coin` WHERE `userid` = null LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cy_newad` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=0 ) ORDER BY price LIMIT 2   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=1 ) ORDER BY price LIMIT 2   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000254s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000390s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Use of undefined constant wkc - assumed 'wkc' /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 68 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: target /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 204 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 213 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 214 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SHOW COLUMNS FROM `cy_user` [ RunTime:0.0015s ]
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cy_order` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cy_evaluation` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=15) or (`status` = 3 and sellid=15) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 15 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=4) or (`status` = 3 and sellid=4) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034445s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034527s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000722s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001175s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001284s ]
+
+[ 2018-03-08T13:16:55+08:00 ] 123.249.76.125 /index.action
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001120s ]
+ERR: 无法加载控制器:Index.action
+
+[ 2018-03-08T14:32:03+08:00 ] 27.151.114.81 /pmd/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001107s ]
+ERR: 无法加载控制器:Pmd
+
+[ 2018-03-08T14:39:58+08:00 ] 169.255.57.165 /CFIDE/h.cfm
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001331s ]
+ERR: 无法加载控制器:CFIDE
+
+[ 2018-03-08T14:39:59+08:00 ] 169.255.57.165 /CFIDE/updates.cfm
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001127s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001235s ]
+ERR: 无法加载控制器:CFIDE
+
+[ 2018-03-08T14:40:00+08:00 ] 169.255.57.165 /CFIDE/sysinfo.cfm
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001221s ]
+ERR: 无法加载控制器:CFIDE
+
+[ 2018-03-08T14:40:00+08:00 ] 169.255.57.165 /CFIDE/administrator/index.cfm
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001262s ]
+ERR: 无法加载控制器:CFIDE
+
+[ 2018-03-08T14:40:01+08:00 ] 169.255.57.165 /jmx-console/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005399s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001290s ]
+ERR: 无法加载控制器:Jmx-console
+
+[ 2018-03-08T14:40:02+08:00 ] 169.255.57.165 /manager/html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001316s ]
+ERR: 无法加载控制器:Manager
+
+[ 2018-03-08T14:40:04+08:00 ] 169.255.57.165 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001138s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001291s ]
+SQL: SHOW COLUMNS FROM `cy_user_coin` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `cy_user_coin` WHERE `userid` = null LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `cy_newad` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=0 ) ORDER BY price LIMIT 2   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=1 ) ORDER BY price LIMIT 2   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000377s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Use of undefined constant wkc - assumed 'wkc' /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 68 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: target /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 204 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 213 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 214 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SHOW COLUMNS FROM `cy_user` [ RunTime:0.0014s ]
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cy_order` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cy_evaluation` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=15) or (`status` = 3 and sellid=15) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 15 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=4) or (`status` = 3 and sellid=4) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035309s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035389s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000937s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001269s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001377s ]
+
+[ 2018-03-08T14:40:05+08:00 ] 169.255.57.165 //CHANGELOG.txt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001154s ]
+ERR: 无法加载控制器:CHANGELOG.txt
+
+[ 2018-03-08T14:40:06+08:00 ] 169.255.57.165 /?q=node&destination=node
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001318s ]
+SQL: SHOW COLUMNS FROM `cy_user_coin` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `cy_user_coin` WHERE `userid` = null LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cy_newad` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=0 ) ORDER BY price LIMIT 2   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=1 ) ORDER BY price LIMIT 2   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000242s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000406s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Use of undefined constant wkc - assumed 'wkc' /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 68 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: target /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 204 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 213 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 214 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SHOW COLUMNS FROM `cy_user` [ RunTime:0.0017s ]
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cy_order` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cy_evaluation` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0023s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=15) or (`status` = 3 and sellid=15) ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 15 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=4) or (`status` = 3 and sellid=4) ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045962s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046046s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000917s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001169s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001273s ]
+
+[ 2018-03-08T14:40:08+08:00 ] 169.255.57.165 /user/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001403s ]
+SQL: SHOW COLUMNS FROM `cy_user_coin` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `cy_user_coin` WHERE `userid` = null LIMIT 1   [ RunTime:0.0008s ]
+ERR: 非法操作:login
+
+[ 2018-03-08T14:41:03+08:00 ] 23.225.201.190 /manager/html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004916s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001033s ]
+ERR: 无法加载控制器:Manager
+
+[ 2018-03-08T15:54:26+08:00 ] 121.42.162.232 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001171s ]
+SQL: SHOW COLUMNS FROM `cy_user_coin` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `cy_user_coin` WHERE `userid` = null LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `cy_newad` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=0 ) ORDER BY price LIMIT 2   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=1 ) ORDER BY price LIMIT 2   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000237s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000335s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Use of undefined constant wkc - assumed 'wkc' /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 68 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: target /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 204 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 213 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 214 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SHOW COLUMNS FROM `cy_user` [ RunTime:0.0013s ]
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cy_order` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cy_evaluation` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=15) or (`status` = 3 and sellid=15) ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 15 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=4) or (`status` = 3 and sellid=4) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033748s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033831s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001085s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001202s ]
+
+[ 2018-03-08T20:06:38+08:00 ] 114.135.109.135 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001038s ]
+SQL: SHOW COLUMNS FROM `cy_user_coin` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cy_user_coin` WHERE `userid` = null LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `cy_newad` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=0 ) ORDER BY price LIMIT 2   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=1 ) ORDER BY price LIMIT 2   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000249s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000380s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Use of undefined constant wkc - assumed 'wkc' /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 68 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: target /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 204 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 213 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 214 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SHOW COLUMNS FROM `cy_user` [ RunTime:0.0012s ]
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cy_order` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cy_evaluation` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=15) or (`status` = 3 and sellid=15) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 15 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=4) or (`status` = 3 and sellid=4) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033139s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033222s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001065s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001193s ]
+
+[ 2018-03-08T23:56:46+08:00 ] 45.249.245.182 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000981s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001087s ]
+SQL: SHOW COLUMNS FROM `cy_user_coin` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `cy_user_coin` WHERE `userid` = null LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `cy_newad` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=0 ) ORDER BY price LIMIT 2   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cy_newad` WHERE ( ad_type=1 ) ORDER BY price LIMIT 2   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000343s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000455s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Use of undefined constant wkc - assumed 'wkc' /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 68 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: target /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 204 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 213 行.
+NOTIC: [8] Undefined index: token /data/www/otc/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 214 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SHOW COLUMNS FROM `cy_user` [ RunTime:0.0013s ]
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cy_order` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cy_evaluation` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=16) or (`status` = 3 and sellid=16) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 16 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=15) or (`status` = 3 and sellid=15) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 15 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+SQL: SELECT `ue_img` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_order` WHERE ( (`status` = 3 and buyid=4) or (`status` = 3 and sellid=4) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `trusted` FROM `cy_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cy_evaluation` WHERE `userid` = 4 AND `evaluation` = 'POSITIVE' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+NOTIC: [8] Undefined index: m /data/www/otc/ThinkPHP/Common/functions.php 第 1953 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037779s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037859s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000779s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001112s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001218s ]
+

@@ -1,0 +1,587 @@
+*{text-decoration:none;list-style-type:none;padding:0px;margin:0px;font-size:14px;}
+/*	测试使用 */
+
+.div{width:20px;height:20px;border:1px solid yellow;}
+.border{border:1px solid red;}
+/*	测试使用 */
+
+/*	鼠标样式属性 */
+.cursor-0{cursor:defult;}/*	默认光标 */
+.cursor-1{cursor:crosshair;}/*	十字线光标 */
+.cursor-2{cursor:pointer;}/*	手势光标 */
+.cursor-3{cursor:text;}/*	文本光标 */
+.cursor-4{cursor:wait;}/*	繁忙光标 */
+.cursor-5{cursor:help;}/*	帮助光标 */
+.cursor-6{cursor:move;}/*	移动光标 */
+.cursor-7{cursor:e-resize;}/*	横移光标 */
+.cursor-8{cursor:ne-resize;}/*	右斜移光标 等同 sw-resize */
+.cursor-9{cursor:nw-resize;}/*	左斜移光标 等同 se-resize */
+.cursor-10{cursor:n-resize;}/*	竖移光标 */
+/*	鼠标样式属性 */
+
+/*	宽度属性 */
+.width{width:100%;}
+/*	百分比部分 */
+.w-10{width:10%;}
+.w-12{width:12%;}
+.w-15{width:15%;}
+.w-20{width:20%;}
+.w-22{width:22%;}
+.w-25{width:25%;}
+.w-30{width:30%;}
+.w-32{width:32%;}
+.w-35{width:35%;}
+.w-40{width:40%;}
+.w-42{width:42%;}
+.w-45{width:45%;}
+.w-50{width:50%;}
+.w-52{width:52%;}
+.w-55{width:55%;}
+.w-60{width:60%;}
+.w-62{width:62%;}
+.w-65{width:65%;}
+.w-70{width:70%;}
+.w-72{width:72%;}
+.w-75{width:75%;}
+.w-80{width:80%;}
+.w-82{width:82%;}
+.w-85{width:85%;}
+.w-90{width:90%;}
+.w-92{width:92%;}
+.w-95{width:95%;}
+/*	普通数值部分 */
+.w00{width:00px;}
+.w10{width:10px;}
+.w20{width:20px;}
+.w30{width:30px;}
+.w40{width:40px;}
+.w50{width:50px;}
+.w60{width:60px;}
+.w70{width:70px;}
+.w80{width:80px;}
+.w90{width:90px;}
+.w100{width:100px;}
+.w110{width:110px;}
+.w120{width:120px;}
+.w130{width:130px;}
+.w140{width:140px;}
+.w150{width:150px;}
+.w160{width:160px;}
+.w170{width:170px;}
+.w180{width:180px;}
+.w190{width:190px;}
+.w200{width:200px;}
+.w204{width:204px;}
+.w208{width:208px;}
+.w210{width:210px;}
+.w214{width:214px;}
+.w218{width:218px;}
+.w220{width:220px;}
+.w224{width:224px;}
+.w228{width:228px;}
+.w230{width:230px;}
+.w234{width:234px;}
+.w238{width:238px;}
+.w240{width:240px;}
+.w244{width:244px;}
+.w248{width:248px;}
+.w250{width:250px;}
+.w254{width:254px;}
+.w258{width:258px;}
+.w260{width:260px;}
+.w264{width:264px;}
+.w268{width:268px;}
+.w270{width:270px;}
+.w274{width:274px;}
+.w278{width:278px;}
+.w280{width:280px;}
+.w284{width:284px;}
+.w288{width:288px;}
+.w290{width:290px;}
+.w294{width:294px;}
+.w298{width:298px;}
+.w300{width:300px;}
+.w304{width:304px;}
+.w308{width:308px;}
+.w310{width:310px;}
+.w314{width:314px;}
+.w318{width:318px;}
+.w320{width:320px;}
+.w324{width:324px;}
+.w328{width:328px;}
+.w330{width:330px;}
+.w334{width:334px;}
+.w338{width:338px;}
+.w340{width:340px;}
+.w344{width:344px;}
+.w348{width:348px;}
+.w350{width:350px;}
+.w354{width:354px;}
+.w358{width:358px;}
+.w360{width:360px;}
+.w364{width:364px;}
+.w368{width:368px;}
+.w370{width:370px;}
+.w374{width:374px;}
+.w378{width:378px;}
+.w380{width:380px;}
+.w384{width:384px;}
+.w388{width:388px;}
+.w390{width:390px;}
+.w394{width:394px;}
+.w398{width:398px;}
+.w400{width:400px;}
+.w404{width:404px;}
+.w408{width:408px;}
+.w410{width:410px;}
+.w414{width:414px;}
+.w418{width:418px;}
+.w420{width:420px;}
+.w424{width:424px;}
+.w428{width:428px;}
+.w430{width:430px;}
+.w434{width:434px;}
+.w438{width:438px;}
+.w440{width:440px;}
+.w444{width:444px;}
+.w448{width:448px;}
+.w450{width:450px;}
+.w454{width:454px;}
+.w458{width:458px;}
+.w460{width:460px;}
+.w464{width:464px;}
+.w468{width:468px;}
+.w470{width:470px;}
+.w474{width:474px;}
+.w478{width:478px;}
+.w480{width:480px;}
+.w484{width:484px;}
+.w488{width:488px;}
+.w490{width:490px;}
+.w494{width:494px;}
+.w498{width:498px;}
+.w500{width:500px;}
+.w504{width:504px;}
+.w508{width:508px;}
+.w510{width:510px;}
+.w514{width:514px;}
+.w518{width:518px;}
+.w520{width:520px;}
+.w524{width:524px;}
+.w528{width:528px;}
+.w530{width:530px;}
+.w534{width:534px;}
+.w538{width:538px;}
+.w540{width:540px;}
+.w544{width:544px;}
+.w548{width:548px;}
+.w550{width:550px;}
+.w554{width:554px;}
+.w558{width:558px;}
+.w560{width:560px;}
+.w564{width:564px;}
+.w568{width:568px;}
+.w570{width:570px;}
+.w574{width:574px;}
+.w578{width:578px;}
+.w580{width:580px;}
+.w584{width:584px;}
+.w588{width:588px;}
+.w590{width:590px;}
+.w594{width:594px;}
+.w598{width:598px;}
+.w600{width:600px;}
+.w604{width:604px;}
+.w608{width:608px;}
+/*	宽度属性 */
+
+/*	高度属性 */
+/*	height */
+.h10{height:10px;}
+.h12{height:12px;}
+.h14{height:14px;}
+.h18{height:18px;}
+.h20{height:20px;}
+.h22{height:22px;}
+.h24{height:24px;}
+.h28{height:28px;}
+.h30{height:30px;}
+.h32{height:32px;}
+.h34{height:34px;}
+.h38{height:38px;}
+.h40{height:40px;}
+.h42{height:42px;}
+.h44{height:44px;}
+.h48{height:48px;}
+.h50{height:50px;}
+.h52{height:52px;}
+.h54{height:54px;}
+.h58{height:58px;}
+.h60{height:60px;}
+.h62{height:62px;}
+.h64{height:64px;}
+.h68{height:68px;}
+.h70{height:70px;}
+.h72{height:72px;}
+.h74{height:74px;}
+.h78{height:78px;}
+.h80{height:80px;}
+.h82{height:82px;}
+.h84{height:84px;}
+.h88{height:88px;}
+.h90{height:90px;}
+.h92{height:92px;}
+.h94{height:94px;}
+.h98{height:98px;}
+.h100{height:100px;}
+.h102{height:102px;}
+.h104{height:104px;}
+.h108{height:108px;}
+.h110{height:110px;}
+.h120{height:120px;}
+.h130{height:130px;}
+.h140{height:140px;}
+.h150{height:150px;}
+.h160{height:160px;}
+.h170{height:170px;}
+.h180{height:180px;}
+.h190{height:190px;}
+.h200{height:200px;}
+/*	line-height */
+.l10{line-height:10px;}
+.l12{line-height:12px;}
+.l14{line-height:14px;}
+.l16{line-height:16px;}
+.l18{line-height:18px;}
+.l20{line-height:20px;}
+.l22{line-height:22px;}
+.l24{line-height:24px;}
+.l26{line-height:26px;}
+.l28{line-height:28px;}
+.l30{line-height:30px;}
+.l32{line-height:32px;}
+.l34{line-height:34px;}
+.l36{line-height:36px;}
+.l38{line-height:38px;}
+.l40{line-height:40px;}
+.l42{line-height:42px;}
+.l44{line-height:44px;}
+.l46{line-height:46px;}
+.l48{line-height:48px;}
+/*	高度属性 */
+
+/*	外补白属性 */
+.m-auto{margin:auto;}
+.m10{margin:10px}
+.m20{margin:20px}
+.m30{margin:30px}
+/*	左边部分 */
+.m-l00{margin-left:00px;}
+.m-l02{margin-left:02px;}
+.m-l04{margin-left:04px;}
+.m-l06{margin-left:06px;}
+.m-l08{margin-left:08px;}
+.m-l10{margin-left:10px;}
+.m-l12{margin-left:12px;}
+.m-l14{margin-left:14px;}
+.m-l16{margin-left:16px;}
+.m-l18{margin-left:18px;}
+.m-l20{margin-left:20px;}
+.m-l22{margin-left:22px;}
+.m-l24{margin-left:24px;}
+.m-l26{margin-left:26px;}
+.m-l28{margin-left:28px;}
+.m-l30{margin-left:30px;}
+.m-l32{margin-left:32px;}
+.m-l34{margin-left:34px;}
+.m-l36{margin-left:36px;}
+.m-l38{margin-left:38px;}
+.m-l40{margin-left:40px;}
+.m-l42{margin-left:42px;}
+.m-l44{margin-left:44px;}
+.m-l46{margin-left:46px;}
+.m-l48{margin-left:48px;}
+.m-l50{margin-left:50px;}
+.m-l52{margin-left:52px;}
+.m-l54{margin-left:54px;}
+.m-l56{margin-left:56px;}
+.m-l58{margin-left:58px;}
+/*	右边部分 */
+.m-r00{margin-right:00px;}
+.m-r02{margin-right:02px;}
+.m-r04{margin-right:04px;}
+.m-r06{margin-right:06px;}
+.m-r08{margin-right:08px;}
+.m-r10{margin-right:10px;}
+.m-r12{margin-right:12px;}
+.m-r14{margin-right:14px;}
+.m-r16{margin-right:16px;}
+.m-r18{margin-right:18px;}
+.m-r20{margin-right:20px;}
+.m-r22{margin-right:22px;}
+.m-r24{margin-right:24px;}
+.m-r26{margin-right:26px;}
+.m-r28{margin-right:28px;}
+.m-r30{margin-right:30px;}
+.m-r32{margin-right:32px;}
+.m-r34{margin-right:34px;}
+.m-r36{margin-right:36px;}
+.m-r38{margin-right:38px;}
+.m-r40{margin-right:40px;}
+.m-r42{margin-right:42px;}
+.m-r44{margin-right:44px;}
+.m-r46{margin-right:46px;}
+.m-r48{margin-right:48px;}
+.m-r50{margin-right:50px;}
+.m-r52{margin-right:52px;}
+.m-r54{margin-right:54px;}
+.m-r56{margin-right:56px;}
+.m-r58{margin-right:58px;}
+/*	上边部分 */
+.m-t00{margin-top:00px;}
+.m-t02{margin-top:02px;}
+.m-t04{margin-top:04px;}
+.m-t06{margin-top:06px;}
+.m-t08{margin-top:08px;}
+.m-t10{margin-top:10px;}
+.m-t12{margin-top:12px;}
+.m-t14{margin-top:14px;}
+.m-t16{margin-top:16px;}
+.m-t18{margin-top:18px;}
+.m-t20{margin-top:20px;}
+.m-t22{margin-top:22px;}
+.m-t24{margin-top:24px;}
+.m-t26{margin-top:26px;}
+.m-t28{margin-top:28px;}
+.m-t30{margin-top:30px;}
+.m-t32{margin-top:32px;}
+.m-t34{margin-top:34px;}
+.m-t36{margin-top:36px;}
+.m-t38{margin-top:38px;}
+/*	下边部分 */
+.m-b00{margin-bottom:00px;}
+.m-b02{margin-bottom:02px;}
+.m-b04{margin-bottom:04px;}
+.m-b06{margin-bottom:06px;}
+.m-b08{margin-bottom:08px;}
+.m-b10{margin-bottom:10px;}
+.m-b12{margin-bottom:12px;}
+.m-b14{margin-bottom:14px;}
+.m-b16{margin-bottom:16px;}
+.m-b18{margin-bottom:18px;}
+.m-b20{margin-bottom:20px;}
+.m-b22{margin-bottom:22px;}
+.m-b24{margin-bottom:24px;}
+.m-b26{margin-bottom:26px;}
+.m-b28{margin-bottom:28px;}
+.m-b30{margin-bottom:30px;}
+.m-b32{margin-bottom:32px;}
+.m-b34{margin-bottom:34px;}
+.m-b36{margin-bottom:36px;}
+.m-b38{margin-bottom:38px;}
+/*	外补白属性 */
+
+/*	内补白属性 */
+.p10{padding:10px}
+.p20{padding:20px}
+.p30{padding:30px}
+/*	左边部分 */
+.p-l00{padding-left:00px;}
+.p-l02{padding-left:02px;}
+.p-l04{padding-left:04px;}
+.p-l06{padding-left:06px;}
+.p-l08{padding-left:08px;}
+.p-l10{padding-left:10px;}
+.p-l12{padding-left:12px;}
+.p-l14{padding-left:14px;}
+.p-l16{padding-left:16px;}
+.p-l18{padding-left:18px;}
+.p-l20{padding-left:20px;}
+.p-l22{padding-left:22px;}
+.p-l24{padding-left:24px;}
+.p-l26{padding-left:26px;}
+.p-l28{padding-left:28px;}
+.p-l30{padding-left:30px;}
+.p-l32{padding-left:32px;}
+.p-l34{padding-left:34px;}
+.p-l36{padding-left:36px;}
+.p-l38{padding-left:38px;}
+.p-l40{padding-left:40px;}
+.p-l42{padding-left:42px;}
+.p-l44{padding-left:44px;}
+.p-l46{padding-left:46px;}
+.p-l48{padding-left:48px;}
+.p-l50{padding-left:50px;}
+.p-l52{padding-left:52px;}
+.p-l54{padding-left:54px;}
+.p-l56{padding-left:56px;}
+.p-l58{padding-left:58px;}
+/*	右边部分 */
+.p-r00{padding-right:00px;}
+.p-r02{padding-right:02px;}
+.p-r04{padding-right:04px;}
+.p-r06{padding-right:06px;}
+.p-r08{padding-right:08px;}
+.p-r10{padding-right:10px;}
+.p-r12{padding-right:12px;}
+.p-r14{padding-right:14px;}
+.p-r16{padding-right:16px;}
+.p-r18{padding-right:18px;}
+.p-r20{padding-right:20px;}
+.p-r22{padding-right:22px;}
+.p-r24{padding-right:24px;}
+.p-r26{padding-right:26px;}
+.p-r28{padding-right:28px;}
+.p-r30{padding-right:30px;}
+.p-r32{padding-right:32px;}
+.p-r34{padding-right:34px;}
+.p-r36{padding-right:36px;}
+.p-r38{padding-right:38px;}
+.p-r40{padding-right:40px;}
+.p-r42{padding-right:42px;}
+.p-r44{padding-right:44px;}
+.p-r46{padding-right:46px;}
+.p-r48{padding-right:48px;}
+.p-r50{padding-right:50px;}
+.p-r52{padding-right:52px;}
+.p-r54{padding-right:54px;}
+.p-r56{padding-right:56px;}
+.p-r58{padding-right:58px;}
+/*	上边部分 */
+.p-t00{padding-top:00px;}
+.p-t02{padding-top:02px;}
+.p-t04{padding-top:04px;}
+.p-t06{padding-top:06px;}
+.p-t08{padding-top:08px;}
+.p-t10{padding-top:10px;}
+.p-t12{padding-top:12px;}
+.p-t14{padding-top:14px;}
+.p-t16{padding-top:16px;}
+.p-t18{padding-top:18px;}
+.p-t20{padding-top:20px;}
+.p-t22{padding-top:22px;}
+.p-t24{padding-top:24px;}
+.p-t26{padding-top:26px;}
+.p-t28{padding-top:28px;}
+.p-t30{padding-top:30px;}
+.p-t32{padding-top:32px;}
+.p-t34{padding-top:34px;}
+.p-t36{padding-top:36px;}
+.p-t38{padding-top:38px;}
+/*	下边部分 */
+.p-b00{padding-bottom:00px;}
+.p-b02{padding-bottom:02px;}
+.p-b04{padding-bottom:04px;}
+.p-b06{padding-bottom:06px;}
+.p-b08{padding-bottom:08px;}
+.p-b10{padding-bottom:10px;}
+.p-b12{padding-bottom:12px;}
+.p-b14{padding-bottom:14px;}
+.p-b16{padding-bottom:16px;}
+.p-b18{padding-bottom:18px;}
+.p-b20{padding-bottom:20px;}
+.p-b22{padding-bottom:22px;}
+.p-b24{padding-bottom:24px;}
+.p-b26{padding-bottom:26px;}
+.p-b28{padding-bottom:28px;}
+.p-b30{padding-bottom:30px;}
+.p-b32{padding-bottom:32px;}
+.p-b34{padding-bottom:34px;}
+.p-b36{padding-bottom:36px;}
+.p-b38{padding-bottom:38px;}
+/*	内补白属性 */
+
+/*	边框属性 */
+.b-d1{border-style:dotted;}.b-d2{border-style:dashed;}.b-s{border-style:solid;}.b-d3{border-style:double;}.b-g{border-style:groove;}.b-r{border-style:ridge;}.b-i{border-style:inset;}.b-o{border-style:outset;}/*	边框属性 */
+/*	浮动部分 */
+.f-l{float:left;}.f-r{float:rigth;}.f-n{float:none;}/*	浮动部分 */
+.d-n{display:none;}/*	框架部分 */
+/*	头部样式 */
+/*	头部样式1 */div#nav-triangle{width:100%;background:#000;margin-bottom:40px;}
+div#nav-triangle>.logo{width:70%;margin:auto;border-top:300px solid #fff;}
+div#nav-triangle>.menu{display:none;}
+
+/*	头部样式2 */
+div#nav-auto{width:100%;height:100px;border-bottom:1px solid #ddd;box-shadow:0px 2px 10px #ccc;position:fixed;top:0px;z-index:999;background:#fff;}
+div#nav-auto>div{margin:6px auto;}
+div#nav-auto>div *{float:left;}
+div#nav-auto>div li{height:84px;line-height:84px;margin:0px 10px;}
+div#nav-auto>div a{color:#666;}
+div#nav-auto>div>div{height:84px;width:100px;}
+div#nav-auto>div>ul .index{color:#333;font-weight:800;border-bottom:4px solid #3D96FF;height:80px;}
+div#nav-auto>div>ul .index>a{color:#333;}
+div#nav-auto>div>ul>li>a:hover{color:#333;font-weight:800;}
+
+/*	框架 ul */
+/*	ul jq 模块 双列显示 */
+ul.jq-ul2-display>li{margin:0px 30px;}
+ul.jq-ul2-display>li>div{padding:2px;padding-left:108px;padding-bottom:40px;}
+ul.jq-ul2-display>li>div>p:nth-child(1){color:#4e5766;font-size:18px;paddin:2px 0px;}
+ul.jq-ul2-display>li>div>p:nth-child(2){color:#667080;font-size:15px;padding:2px 0px 16px;}
+ul.jq-ul2-display>li>div>p:nth-child(3){color:#525a66;font-size:14px;}
+
+/*	ul jq 模块 三列显示 */
+ul.jq-ul3-display{padding:40px 0px;}
+ul.jq-ul3-display>li{margin:5px 8px;}
+
+/*	ul jq 模块 四列显示 */
+ul.jq-ul4-display{padding:40px 0px;}
+ul.jq-ul4-display>li{margin:5px 10px;float:left;}
+
+/*	ul jq 模块 六列显示 */
+ul.jq-ul6-display{margin:0px;padding:0px;}
+ul.jq-ul6-display>li{float:left;}
+/*	ul css 模块 双色列表显示 */
+ul.ul-list2>li{background:#fff;}
+ul.ul-list2>li:nth-child(2n+2){background:#F5F6FA;}
+
+/*	ul css 模块 黑灰双色列表显示 */
+ul.ul-list2-bw>li{background:none;}
+ul.ul-list2-bw>li:nth-child(2n+2){background:#F8F8F8;}
+
+/*	ul li 展示列，单排居中展示 当然，它们也是 选项 */
+ul.list-repeat{margin:30px auto;height:42px;}
+ul.list-repeat>li{float:left;border:2px solid #ccc;text-align:center;padding:10px;color:#000;background:#F8F8F8;margin:0px 5px;width:87px;height:20px;font-size:16px;}
+ul.list-repeat>.index{border-color:#000;}
+ul.list-repeat li:hover{background:#fff;box-shadow:0px 0px 10px #ccc;}
+
+/*	框架 div */
+/*	没有输出，支持图片展示 */
+.div1{width:278px;height:165px;overflow:hidden;}.div1>.div1background{width:100%;height:100%;background:#000;opacity:0.3;}
+.div1:hover .div1background{background:-webkit-linear-gradient(90deg, #333, #fff);}
+
+/*	一行输出 */
+.div2{border-radius:4px;width:270px;height:240px;box-shadow:0px 3px 8px #ccc;}
+.div2>div{height:150px;}
+.div2>p:nth-child(2){color:#474c77;font-size:24px;margin-top:12px;padding:0px 0px 10px 16px;}
+.div2>p:nth-child(3){color:#8f92ae;font-size:18px;padding-left:16px;}
+
+/*	两行输出 图标型图案 */
+.div3{width:276px;height:300px;border-top:1px solid #ddd;border-left:1px solid #ccc;#background:#F8F8F8;border-radius:8px;}
+.div3>div{width:68px;height:68px;border:1px solid #ccc;border-radius:35px;background:#fff;margin:30px auto 0px;}
+.div3>p:nth-child(2){margin:10px 0px;font-size:20px;color:#333;text-align:center;}
+.div3lDiv:hover .lFont{display:none;}
+.div3lDiv:hover .d-n{display:inline;}
+.div3>p:nth-child(3){padding:0px 8px;line-height:20px;color:#333;font-size:14px;}
+
+/*	两行输出 图片背景，一行文字 */
+div.div4{width:373px;height:250px;color:#fff;font-size:16px;line-height:220px;text-align:center;}
+/*	名片 div 1 */
+div.divBC1{padding:10px;width:345px;height:400px;}
+div.divBC1 img{border:none;}
+div.divBC1>div:nth-child(1){margin-bottom:20px;height:196px;}
+div.divBC1>div:nth-child(1)>img{width:175px;height:196px;float:left;}
+div.divBC1>div:nth-child(1)>p{float:left;line-height:196px;font-size:20px;color:#fff;padding:0px 10px;}
+div.divBC1>p:nth-child(2){line-height:19px;font-size:14px;color:#999;}
+
+/*	框架部分 */
+
+/*	框架菜单栏 */
+/*	右侧菜单栏 */
+div#jq-menu1{width:80px;position:fixed;top:50%;right:18px;z-index:9999;padding:10px;border:1px solid #fff;text-align:center;}
+div#jq-menu1>ul{border:#fff;}
+div#jq-menu1>ul>li{cursor:pointer;height:20px;border:1px solid #aaa;color:#aaa;font-size:18px;padding:8px;background:#111;margin-bottom:6px;}
+div#jq-menu1>ul>li a{color:#aaa;}
+div#jq-menu1>ul>li:hover{border-color:#fff;color:#fff;background:#000;weight:110%;height:24px;font-size:20px;box-shadow:0px 0px 6px #000;}
+div#jq-menu1>div:nth-child(2){cursor:pointer;border:1px solid #000;background:#eee;font-size:19px;}
+div#jq-menu1>div:nth-child(2):hover{background:#fff;font-weight:800;}

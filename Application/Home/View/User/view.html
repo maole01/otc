@@ -1,0 +1,216 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/user_fef8001bd5.css">
+<link rel="stylesheet" href="__ROOT__/Public/static/css/common_2aed4bc732.css" >
+<div class="container user">
+    <div class="user-panel user-panel1">
+        <div class="poster-info clear-float">
+            <img class="poster-head fl" width="60" height="60" src="{$info.ue_img}"  alt="">
+            <div class="fl info-box">
+                <div class="user-name">{$info.username}</div>
+                <div class="poster-info-cont clear-float">
+          <span class="poster-info-item">
+              <div class="item-d">{$info.id|getjycs=###}</div>
+            <div class="item-n">交易次数</div>
+          </span>
+                    <span class="poster-info-item">
+            <div class="item-d">{$info.id|getxrrs=###}</div>
+            <div class="item-n">信任人数</div>
+          </span>
+                    <span class="poster-info-item">
+            <div class="item-d">{$info.id|gethpl=###} %</div>
+            <div class="item-n">好评度</div>
+          </span>
+         <!--<span class="poster-info-item">
+            <div class="item-d">{$info.id|getcjsl=###}+ BTC</div>
+            <div class="item-n">历史交易</div>
+          </span>-->
+                </div>
+                <div class="poster-sign"></div>
+            </div>
+            <div>
+                <div class="btn-cont">
+                  <if condition="$Think.session.userid neq $info['id']">
+                       <if condition="$is_trusting neq 1">
+                            <a href="javascript:;" id="btnTrust"  value='0' class="btn "> 信任 </a>
+                       <else/>
+                            <a href="javascript:;" id="btnTrust" value='1' class="btn btn-line">  已信任 </a>
+                       </if>
+
+                      <if condition="$is_blocking neq 1">
+                          <a href="javascript:;" id="btnIgnore"  value='0'  class="btn grey "> 屏蔽 </a>
+                      <else/>
+                          <a href="javascript:;" id="btnIgnore"  value='1'  class="btn grey btn-line"> 已屏蔽 </a>
+                      </if>
+                  </if>
+                </div>
+
+
+                <div class="ta-r">
+                    <if condition="$info.mobile neq null">
+                            <div class="user-check"><div class="icon-bind-phone-s  active "></div>
+                                手机已验证
+                            </div>
+                    <else/>
+                            <div class="user-check"><div class="icon-bind-phone-s"></div>
+                                手机未验证
+                            </div>
+                    </if>
+                    <if condition="$info.id_num neq null">
+                            <div class="user-check"><div class="icon-id-card-s  active "></div>
+                                身份证已验证
+                            </div>
+                    <else/>
+                            <div class="user-check"><div class="icon-id-card-s"></div>
+                                身份证未验证
+                            </div>
+                    </if>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="user-panel mt-20">
+        <h3 class="h3"><span class="blue-text">{$info.username}</span>发布的广告</h3>
+        <div class="tab-cont clear-float">
+            <div type="BUY" class="switch-tab current" id="buy">在线购买</div>
+            <div type="SELL" class="switch-tab" id="sell">在线出售</div>
+        </div>
+
+            <table class="table"   id="buy_list">
+                <thead>
+                <tr>
+
+                    <th class="col-25 pl-30">交易币种</th>
+                    <th class="col-25">付款方式</th>
+                    <th>交易限额</th>
+                    <th>价格</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                   <foreach name="adlist" item="v">
+                      <if condition="$v['ad_type'] eq 1">
+                         <tr>
+                             <td class="pl-30 tr-cow td-coin">{$v.coin|strtoupper}</td>
+                             <td class="tr-cow">
+                                 <switch name="v.provider" >
+                                     <case value="1">银行转账</case>
+                                     <case value="2">支付宝</case>
+                                     <case value="3">微信支付</case>
+                                     <case value="4">其它</case>
+                                 </switch>
+                             </td>
+                             <td class="tr-cow">{$v.min_amount}-{$v.max_amount} {$v.currency|strtoupper}</td>
+                             <td class="tr-cow tr-30"><span class="price">{$v.price}</span> {$v.currency|strtoupper}</td>
+                             <td class="pr-30 btn-box"><a class="btn fr" href="{:U('Addetail/index',array('adid'=>$v['id']))}">出售 {$v.coin|strtoupper}</a></td>
+                         </tr>
+                      </if>
+                   </foreach>
+                </tbody>
+            </table>
+
+            <table class="table hidden"  id="sell_list">
+                <thead>
+                <tr>
+                    <th class="col-25 pl-30">交易币种</th>
+                    <th class="col-25">付款方式</th>
+                    <th>交易限额</th>
+                    <th>价格</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <foreach name="adlist" item="v">
+                        <if condition="$v['ad_type'] eq 0">
+                            <tr>
+                                <td class="pl-30 tr-cow td-coin">{$v.coin|strtoupper=###}</td>
+                                <td class="tr-cow">
+                                    <switch name="v.provider" >
+                                        <case value="1">银行转账</case>
+                                        <case value="2">支付宝</case>
+                                        <case value="3">微信支付</case>
+                                        <case value="4">其它</case>
+                                    </switch>
+                                </td>
+                                <td class="tr-cow">{$v.min_amount}-{$v.max_amount} {$v.currency|strtoupper}</td>
+                                <td class="tr-cow"><span class="price">{$v.price}</span> {$v.currency|strtoupper}</td>
+                                <td class="pr-30 btn-box"><a class="btn fr" href="{:U('Addetail/index',array('adid'=>$v['id']))}">购买 {$v.coin|strtoupper}</a></td>
+                            </tr>
+                        </if>
+                    </foreach>
+                </tbody>
+            </table>
+
+
+    </div>
+</div>
+
+<include file="Public:footer"/>
+
+<script>
+    var id={$info.id};
+    $('#btnTrust').click(function () {
+        var trust=$('#btnTrust').attr('value');
+        $.post('{:U("User/trust")}',{id:id},function (data) {
+             if(data.status==1){
+                 layer.msg(data.info, {
+                     icon: 1
+                 });
+                 if(trust == 0){
+                     $('#btnTrust').html('已信任');
+                     $('#btnTrust').attr('value',1);
+                     $('#btnTrust').addClass('btn-line');
+                 } else if (trust == 1) {
+                     $('#btnTrust').html('信任');
+                     $('#btnTrust').attr('value',0);
+                     $('#btnTrust').removeClass('btn-line');
+                 }
+             } else {
+                 layer.msg(data.info, {
+                     icon: 2
+                 });
+             }
+        })
+    });
+
+    $('#btnIgnore').click(function () {
+        var blocking=$('#btnIgnore').attr('value');
+        $.post('{:U("User/blocking")}',{id:id},function (data) {
+            if(data.status==1){
+                layer.msg(data.info, {
+                    icon: 1
+                });
+                if(blocking == 0){
+                    $('#btnIgnore').html('已屏蔽');
+                    $('#btnIgnore').attr('value',1);
+                    $('#btnIgnore').addClass('btn-line');
+                } else if (blocking == 1) {
+                    $('#btnIgnore').html('屏蔽');
+                    $('#btnIgnore').attr('value',0);
+                    $('#btnIgnore').removeClass('btn-line');
+                }
+            } else {
+                layer.msg(data.info, {
+                    icon: 2
+                });
+            }
+        })
+    })
+
+    $('#buy').click(function () {
+        $('#sell').removeClass('current');
+        $('#sell_list').addClass('hidden');
+        $('#buy').addClass('current');
+        $('#buy_list').removeClass('hidden');
+    })
+
+    $('#sell').click(function () {
+        $('#buy').removeClass('current');
+        $('#buy_list').addClass('hidden');
+        $('#sell').addClass('current');
+        $('#sell_list').removeClass('hidden');
+    })
+
+
+</script>

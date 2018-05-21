@@ -1,0 +1,149 @@
+<include file="Public:header"/>
+<include file="Setting:left"/>
+    <div class="fr right-wrap">
+        <div class="setting-title">基本信息</div>
+        <div class="setting-panel">
+            <div class="head-cont">
+                <img class="user-logo" src="__ROOT__{$userinfo.ue_img}" alt="">
+                <a class="edit-logo">编辑头像</a>
+                <form action="{:U('Setting/setimg')}" id="form" method="post" enctype="multipart/form-data">
+                    <input class="avatar-input" id="file" name="file" type="file"
+                           accept="image/jpg,image/jpeg,image/png" onchange="preview(this)">
+                </form>
+            </div>
+            <div class="user-profile">
+                <div class="user-name">{$userinfo.username}</div>
+                <ul class="profile-detail">
+                    <li class="profile-item">
+                        <span class="item-name">身份验证: </span>
+
+                        {$userinfo['idcard']?'<span>已验证</span>':'<a href="/setting/user-verification"
+                                                                    class="link">未验证</a>'}
+
+                    </li>
+                    <li class="profile-item">
+                        <span class="item-name">手机号码: </span>
+
+                        <span class="item-text">{$userinfo['mobile']?'已验证':'未验证'}</span>
+
+                    </li>
+                    <li class="profile-item">
+                        <span class="item-name">注册时间: </span>
+                        <span class="item-text">{$userinfo.addtime|date='Y-m-d H:i:s',###}</span>
+                    </li>
+
+                    <li class="profile-item">
+                        <span class="item-name">信任人数: </span>
+                        <span class="item-text">被 {$userinfo.id|getxrrs=###} 人信任</span>
+                    </li>
+                    <li class="profile-item">
+                        <span class="item-name">累计交易次数: </span>
+                        <span class="item-text">{$userinfo.id|getjycs=###}</span>
+                    </li>
+                    <li class="profile-item">
+                        <span class="item-name">累计交易量: </span>
+                        <span class="item-text">{$userinfo.id|getcjsl=###} <span class="link">wkc</span></span>
+                    </li>
+                </ul>
+                <div class="form-cont">
+                    <div class="input-cont new-ad">
+                        <textarea class="input textarea" name="intro" autocomplete="off"
+                                  placeholder=简介，在您的公共资料上展示您的介绍信息。纯文本，不超过200个字>{$intro.content}</textarea>
+                        <div class="mt-10">请勿填写您邮箱，避免收到钓鱼邮件</div>
+                    </div>
+                    <a class="btn submit fr save-mark" onclick="submitIntro()">保存</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public:footer"/>
+
+
+<script type="text/javascript">
+    function preview(file) {
+        if (file.files && file.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (evt) {
+                index = layer.open({
+                    type: 1,
+                    title: false,
+                    closeBtn: 0,
+                    shadeClose: true,
+                    skin: 'yourclass',
+                    content: '<table class="ui-dialog-grid"><tbody><tr><td i="header" class="ui-dialog-header" style="display: none;"><button i="close" class="ui-dialog-close" title="cancel">&times;</button><div i="title" class="ui-dialog-title" id="title:1509526661230"></div></td></tr><tr><td i="body" class="ui-dialog-body"><div i="content" class="ui-dialog-content" id="content:1509526661230"><div class="dialog-msg"><img src="' + evt.target.result + '" style="width: 200px;height: 200px" /></div></div></td></tr><tr><td i="footer" class="ui-dialog-footer"><div i="statusbar" class="ui-dialog-statusbar" style="display: none;"></div><div i="button" class="ui-dialog-button"><button type="button" onclick="closeCQ()">取消</button><button type="button" id="submit" onclick="subform()">上传</button> </div></td></tr></tbody></table>',
+
+                });
+            }
+            reader.readAsDataURL(file.files[0]);
+        }
+    }
+
+
+    function closeCQ() {
+
+        layer.close(index);
+    }
+
+    function subform() {
+        var formData = new FormData($("#form")[0]);
+        $.ajax({
+            url: "{:U('Setting/setimg')}",
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                if (data.status == 1) {
+                    $('.user-logo').attr("src", "__ROOT__" + data['filename']);
+
+                    layer.msg(data.info, {
+                        icon: 1
+                    });
+
+                    layer.close(index);
+                }
+                else {
+                    layer.msg(data.info, {
+                        icon: 2
+                    });
+                }
+            },
+            error: function (data) {
+                layer.msg(data.info, {
+                    icon: 2
+                });
+            }
+        });
+    }
+
+    function submitIntro() {
+        var intro = $('[name=intro]').val();
+        if (intro == '') {
+            return false;
+        }
+        else if (intro.length > 200) {
+            layer.msg('不得超过200个字', {
+                icon: 2
+            });
+        }
+        else {
+            $.post('{:U("Setting/userinfo")}', {intro: intro}, function (data) {
+                if (data.status == 1) {
+                    layer.msg(data.info, {
+                        icon: 1
+                    });
+                }
+                else {
+                    layer.msg(data.info, {
+                        icon: 2
+                    });
+                }
+            });
+        }
+    }
+
+
+</script>

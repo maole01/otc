@@ -1,0 +1,32 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/wallet_a67d39a6b6.css">
+<div class="panel transactions-panel" style="width:80%;margin: 0 auto">
+    <table class="table table-hover">
+        <tr>
+            <td>时间</td>
+            <td>类型</td>
+            <td>金额</td>
+            <td>数量</td>
+            <td>手续费</td>
+            <td>售价</td>
+        </tr>
+        <foreach name="list" item="v">
+            <tr>
+                <td>{$v.orderaddtime|addtime}</td>
+                <td>
+                    <switch name="v.order_type">
+                        <case value="0">买入</case>
+                        <case value="1">售出</case>
+                        <case value="3">下线交易奖励</case>
+                    </switch>
+                    {$v.coin_type|strtoupper=###}
+                </td>
+                <td>{$v['amount']}</td>
+                <td>{$v['num']}</td>
+                <td>{$v['fee']}</td>
+                <td>{$v['price']}</td>
+            </tr>
+        </foreach>
+    </table>
+</div>
+<include file="Public:footer"/>

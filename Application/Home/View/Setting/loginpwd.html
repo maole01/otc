@@ -1,0 +1,81 @@
+<include file="Public:header"/>
+<include file="Setting:left"/>
+
+<div class="fr right-wrap">
+    <div class="setting-title">安全设置>修改登录密码</div>
+    <div class="setting-panel">
+        <form class="form-cont" id="step1">
+
+            <div class="form-text">
+                登录密码请不要与资金密码或其他网站密码一致，由此产生的账号被盗，本站概不负责。
+            </div>
+
+            <div class="input-cont">
+                <span class="icon form-password"></span>
+                <input class="input"  onfocus="this.type='password'" check-type="password1" name="old_password" placeholder="请输入原登录密码">
+                <div class="form-tips"></div>
+                <div class="error-msg"></div>
+            </div>
+
+            <div class="input-cont">
+                <span class="icon form-password"></span>
+                <input class="input"  onfocus="this.type='password'" check-type="password" name="password" placeholder="请输入新登录密码">
+                <div class="form-tips"></div>
+                <div class="error-msg"></div>
+            </div>
+
+            <div class="input-cont">
+                <span class="icon form-password"></span>
+                <input class="input"  onfocus="this.type='password'" check-type="password" name="confirm_password" placeholder="请再次输入新登录密码">
+                <div class="form-tips"></div>
+                <div class="error-msg"></div>
+            </div>
+
+            <a id="submit" class="btn submit" onclick="loginpwd()">确定</a>
+        </form>
+    </div>
+</div>
+
+</div>
+<include file="Public:footer"/>
+
+<script>
+    function loginpwd() {
+        var rules = /^[a-zA-Z0-9]{6,16}$/;
+        if(!rules.test($('input[name=old_password]').val())){
+            layer.msg('原登录密码不正确');
+            return false;
+        }
+        if (!rules.test($("input[name=password]").val())) {
+            layer.msg('新密码格式不正确');
+            return false;
+        }
+
+        if ($("input[name=password]").val()!=$("input[name=confirm_password]").val()) {
+            layer.msg('两次密码不一致');
+            return false
+        }
+
+        var loginpwd=$("input[name=old_password]").val();
+
+        var newpwd=$('input[name=password]').val();
+
+        var newpwd2=$('input[name=confirm_password]').val();
+
+        $.post('{:U("Setting/loginpwd")}',{loginpwd:loginpwd,newpwd:newpwd,newpwd2:newpwd2},function (data) {
+            if(data.status==1){
+                layer.msg(data.info, {
+                    icon: 1
+                },function () {
+                    location.href="{:U('Setting/options')}";
+                });
+            } else{
+                layer.msg(data.info, {
+                    icon: 2
+                });
+            }
+        });
+
+    }
+
+</script>

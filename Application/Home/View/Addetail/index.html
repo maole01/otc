@@ -1,0 +1,263 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/ad-detail_ace1d7eae9.css">
+<div class="container clear-float ad-detail">
+    <div class="detail-left ">
+        <div class="poster-info clear-float">
+            <div class="fl head-sculpture">
+                <a href="{:U('User/view',array('id'=>$adinfo['userid']))}"><img class="poster-head fl" src="__ROOT__{$adinfo['ue_img']}"  alt=""></a>
+            </div>
+            <div class="fl detail-bottom-wrap">
+                <div class="user-name"><a href="{:U('User/view',array('id'=>$adinfo['userid']))}" >{$adinfo['username']}</a><span style="display: none" class="icon-message" userid="{$adinfo['userid']}"></span></div>
+                <div class="poster-info-cont clear-float">
+                      <span class="poster-info-item">
+                        <div class="item-d">{$adinfo['userid']|getjycs=###}</div>
+                        <div class="item-n">交易次数</div>
+                      </span>
+                                <span class="poster-info-item">
+                        <div class="item-d">{$adinfo['userid']|getxrrs=###}</div>
+                        <div class="item-n">信任人数</div>
+                      </span>
+                                <span class="poster-info-item">
+                        <div class="item-d">{$adinfo['userid']|gethpl=###}%</div>
+                        <div class="item-n">好评度</div>
+                      </span>
+                                <span class="poster-info-item">
+                        <div class="item-d">{$adinfo['userid']|getcjsl=###,$adinfo['coin']}{$adinfo.coin|strtoupper}</div>
+                        <div class="item-n">历史成交</div>
+                      </span>
+                </div>
+                <table class="table-info pt-30">
+                    <tr>
+                        <th>报价:</th><td></td><td class="price"><span>{$adinfo['price']}</span> {$adinfo['currency']|strtoupper}/{$adinfo['coin']|strtoupper}</td>
+                    </tr>
+                    <tr>
+                        <th>交易限额:</th><td></td><td>{$adinfo['min_amount']}-{$adinfo['max_amount']} {$adinfo['currency']|strtoupper}</td>
+                    </tr>
+                    <tr>
+                        <th>付款方式:</th><td></td><switch name="adinfo.provider" >
+                        <case value="1"><td>银行转账</td></case>
+                        <case value="2"><td>支付宝</td></case>
+                        <case value="3"><td>微信支付</td></case>
+                        <case value="4"><td>其它</td></case>
+                    </switch>
+                    </tr>
+                    <tr>
+                        <th>付款期限:</th><td></td><td>{$adinfo.paytime|default=30} 分钟</td>
+                    </tr>
+                    <if condition="$adinfo['ad_type'] == 0">
+                        <tr>
+                            <th>最大可购买:</th><td></td><td>{$adinfo[$adinfo['coin']]} {$adinfo.coin|strtoupper}</td>
+                        </tr>
+                    </if>
+                </table>
+            </div>
+           
+        </div>
+
+        
+
+        <div class="form-cont ad-detail clear-float">
+            <div class="form-title">
+
+
+                <span class="form-name">你想{$adinfo['ad_type']?'出售':'购买'}多少？</span>
+
+
+                <span class="form-name"></span>
+            </div>
+            <div class="input-cont input2 mr-12" >
+                <input type="number" placeholder="输入您想购买的金额" class=" input " name="amount" >
+                <div class="input-after">CNY</div>
+            </div>
+            <span class="icon-equal"></span>
+            <div class="input-cont input2">
+                <input type="number" placeholder="输入您想购买的数量" class="input" name="qty" >
+                <div class="input-after">{$adinfo.coin|strtoupper}</div>
+            </div>
+            <if condition="$Think.session.userid eq $adinfo['userid']">
+
+            <elseif condition="$Think.session.userid eq null"/>
+            <a  style="" href="{:U('Login/phone')}"  class="btn submit">免费注册，立即购买{$adinfo.coin|strtoupper}</a>
+            <elseif condition="$adinfo.ad_type eq 0"/>
+            <a  style=""  href="javascript:;" class="btn submit" id="order">立即购买</a>
+            <elseif condition="$adinfo.ad_type eq 1"/>
+            <a  style="" href="javascript:;" class="btn submit" id="order">立即出售</a>
+            </if>
+            <hr class="line-hr">
+
+            <div class="form-title pt-30">
+                <span class="form-name">交易须知</span>
+            </div>
+            
+            <p class="p">1.交易前请详细了解对方的交易信息。<br>2.请通过平台进行沟通约定，并保存好相关聊天记录。<br>3.如遇到交易纠纷，可通过申诉来解决问题。<br>4.在您发起交易请求后，{$adinfo['coin']|strtoupper}被锁定在托管中，受到保护。如果您是买家，发起交易请求后，请在付款周期内付款并把交易标记为付款已完成。卖家在收到付款后将会放行处于托管中的{$adinfo['coin']|strtoupper}。<br>交易前请阅读《服务条款》以及常见问题、交易指南等帮助文档。<br>5.请注意欺诈风险，交易前请检查该用户收到的评价和相关信用信息，并对新近创建的账户多加留意。<br>6.托管服务保护网上交易的买卖双方。在发生争议的情况下，我们将评估所提供的所有信息，并将托管的{$adinfo['coin']|strtoupper}放行给其合法所有者。<br></p>
+        </div>
+    </div>
+    <div class="detail-right">
+        <div class="form-cont">
+            <div class="form-title pt-30">
+                <span class="form-name">广告留言</span>
+            </div>
+            <div class="line mt-20 mb-20"></div>
+            <p class="p mb-20">{$intro.content}</p>
+        </div>
+
+
+    </div>
+</div>
+
+<include file="Public:footer"/>
+
+<script>
+    $('[name=amount]').keyup(function() {
+        var amount = $('[name=amount]').val();
+        if (! (/^[0-9]\d*(\.\d+)?$/.test(amount))) {
+            return false
+        }
+        if (amount >= {$adinfo['max_amount']}) {
+            amount = {$adinfo['max_amount']};
+            $('[name=amount]').val(amount)
+        }
+        var btcnum = amount / {$adinfo['price']};
+        btcnum = btcnum.toFixed(8);
+        $('[name=qty]').val(btcnum)
+    });
+    $('[name=qty]').keyup(function() {
+        var qty = $('[name=qty]').val();
+        if (! (/^[0-9]\d*(\.\d+)?$/.test(qty))) {
+            return false
+        }
+        var amount = qty * {$adinfo['price']};
+        amount = amount.toFixed(8);
+        $('[name=amount]').val(amount)
+    });
+    $('#order').click(function() {
+        var price = {$adinfo.price};
+        var amount = $('[name=amount]').val();
+        var qty = $('[name=qty]').val();
+        if (amount == '' || qty == '') {
+            layer.msg('未填写');
+            return false
+        }
+        if (!{$adinfo.ad_type}) {
+            layer.confirm('<div><h2>下单确认</h2></div>' + '<div><p>购买价格: ' + price + ' CNY</p></div>' + '<div><p>购买金额: ' + amount + ' CNY</p></div>' + '<div><p>购买数量: ' + qty + ' {$adinfo.coin|strtoupper}</p></div>' + '<div><h1><font style="color: red">提醒：请确认价格再下单，下单后此交易的{$adinfo['coin']|strtoupper}将托管锁定，请放心购买。</font></h1></div>', {
+                    btn: ['确定购买', '放弃购买']
+                },
+                function() {
+                    if ({$ga}) {
+                        layer.prompt({
+                                title: '输入谷歌6位验证码',
+                                formType: 0
+                            },
+                            function(pass, index) {
+                                if (/^\d{6}$/.test(pass)) {
+                                    $.post("{:U('Addetail/gasubmit')}", {
+                                            code: pass
+                                        },
+                                        function(data) {
+                                            if (data.status) {
+                                                $.post('{:U("Order/index")}', {
+                                                        adid: {$adinfo['adid']},
+                                                        ad_type: {$adinfo['ad_type']},
+                                                        price: price,
+                                                        amount: amount,
+                                                        qty: qty
+                                                    },
+                                                    function(data) {
+                                                        if (data.status) {
+                                                            location.href = data.url
+                                                        } else {
+                                                            layer.msg(data.info, {
+                                                                icon: 2
+                                                            })
+                                                        }
+                                                    })
+                                            } else {
+                                                layer.msg(data.info)
+                                            }
+                                        })
+                                } else {
+                                    layer.msg('输入的格式不正确')
+                                }
+                            })
+                    } else {
+                        $.post('{:U("Order/index")}', {
+                                adid: {$adinfo['adid']},
+                                ad_type: {$adinfo['ad_type']},
+                                price: price,
+                                amount: amount,
+                                qty: qty
+                            },
+                            function(data) {
+                                if (data.status) {
+                                    location.href = data.url
+                                } else {
+                                    layer.msg(data.info, {
+                                        icon: 2
+                                    })
+                                }
+                            })
+                    }
+                })
+        } else {
+            layer.confirm('<div><h2>下单确认</h2></div>' + '<div><p>出售价格: ' + price + ' CNY</p></div>' + '<div><p>出售金额: ' + amount + ' CNY</p></div>' + '<div><p>出售数量: ' + qty + ' {$adinfo.coin|strtoupper}</p></div>' + '<div><h1><font style="color: red">提醒：请确认价格再下单，下单后此交易的{$adinfo['coin']|strtoupper}将托管锁定，请放心出售。</font></h1></div>', {
+                    btn: ['确定出售', '放弃出售']
+                },
+                function() {
+                    if ({$ga}) {
+                        layer.prompt({
+                                title: '输入谷歌6位验证码',
+                                formType: 0
+                            },
+                            function(pass, index) {
+                                if (/^\d{6}$/.test(pass)) {
+                                    $.post("{:U('Addetail/gasubmit')}", {
+                                            code: pass
+                                        },
+                                        function(data) {
+                                            if (data.status) {
+                                                $.post('{:U("Order/index")}', {
+                                                        adid: {$adinfo['adid']},
+                                                        price: price,
+                                                        ad_type: {$adinfo['ad_type']},
+                                                        amount: amount,
+                                                        qty: qty
+                                                    },
+                                                    function(data) {
+                                                        if (data.status) {
+                                                            location.href = data.url
+                                                        } else {
+                                                            layer.msg(data.info, {
+                                                                icon: 2
+                                                            })
+                                                        }
+                                                    })
+                                            } else {
+                                                layer.msg(data.info)
+                                            }
+                                        })
+                                } else {
+                                    layer.msg('输入的格式不正确')
+                                }
+                            })
+                    } else {
+                        $.post('{:U("Order/index")}', {
+                                adid: {$adinfo['adid']},
+                                price: price,
+                                ad_type: {$adinfo['ad_type']},
+                                amount: amount,
+                                qty: qty
+                            },
+                            function(data) {
+                                if (data.status) {
+                                    location.href = data.url
+                                } else {
+                                    layer.msg(data.info, {
+                                        icon: 2
+                                    })
+                                }
+                            })
+                    }
+                })
+        }
+    });
+</script>

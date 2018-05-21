@@ -1,0 +1,144 @@
+<include file="Public:header"/>
+
+<div id="main-content">
+
+    <div id="top-alert" class="fixed alert alert-error" style="display: none;">
+
+        <button class="close fixed" style="margin-top: 4px;">&times;</button>
+
+        <div class="alert-content">警告内容</div>
+
+    </div>
+
+    <div id="main" class="main">
+
+        <div class="main-title-h">
+
+            <span class="h1-title">在线购买广告管理</span>
+
+        </div>
+
+        <div class="data-table table-striped">
+
+            <table class="">
+
+                <thead>
+
+                <tr>
+
+                    <th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
+
+                    <th class="">ID</th>
+
+                    <th class="">用户名</th>
+
+                    <th class="">币种</th>
+
+                    <th class="">付款方式</th>
+
+                    <th class="">价格</th>
+
+                    <th class="">交易限额</th>
+
+                    <th class="">时间</th>
+
+                    <th class="">状态</th>
+
+                    <th class="">操作</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <notempty name="list">
+
+                    <volist name="list" id="vo">
+
+                        <tr>
+
+                            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}"/></td>
+
+                            <td>{$vo.adid}</td>
+
+                            <td>{$vo['username']}</td>
+
+                            <td>{$vo['coin']}</td>
+
+                            <switch name="vo.provider" >
+                                <case value="1"><td class="td-name">银行转账</td></case>
+                                <case value="2"><td class="td-name">支付宝</td></case>
+                                <case value="3"><td class="td-name">微信支付</td></case>
+                                <case value="4"><td class="td-name">其它</td></case>
+                            </switch>
+
+                            <td>{$vo['price']}</td>
+
+                            <td>{$vo.min_amount}-{$vo.max_amount} {$vo.currency|strtoupper=###}</td>
+
+                            <td>{$vo.addtime|addtime}</td>
+
+                            <td>
+
+                                <eq name="vo.adstatus" value="1">
+
+                                    进行中
+
+                                    <else/>
+
+                                    已下架
+
+                                </eq>
+
+                            </td>
+
+                            <td>
+
+                                <if condition="$vo.adstatus == 0">
+                                    <a href="{:U('Trade/status?id='.$vo['adid'])}" class="ajax-get btn btn-primary btn-xs">上架</a>
+                                    <else/>
+                                    <a href="{:U('Trade/status?id='.$vo['adid'])}" class="ajax-get btn btn-primary btn-xs">下架</a>
+                                </if>
+
+                            </td>
+
+                        </tr>
+
+                    </volist>
+
+                    <else/>
+
+                    <td colspan="12" class="text-center">Oh! 暂时还没有内容!</td>
+
+                </notempty>
+
+                </tbody>
+
+            </table>
+
+            <div class="page">
+
+                <div>{$page}</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<include file="Public:footer"/>
+
+<block name="script">
+
+    <script type="text/javascript" charset="utf-8">
+
+        //导航高亮
+
+        highlight_subnav("{:U('Trade/index')}");
+
+    </script>
+
+</block>

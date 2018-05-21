@@ -1,0 +1,302 @@
+.setting-leftmenu {
+    color: #677686;
+    font-size: 14px;
+    position: relative;
+    background: #fff;
+    border: 1px solid #e4e9ed;
+    width: 180px;
+    padding-bottom: 10px
+}
+
+.setting-leftmenu .menu-head {
+    color: #fff;
+    font-size: 16px;
+    background: #1798f2;
+    margin-bottom: 10px;
+    border: 1px solid #1798f2
+}
+
+.menu-c {
+    padding: 20px 0 20px 40px;
+    position: relative
+}
+
+.menu-item-cont {
+    overflow: hidden;
+    transition: height .2s;
+    -moz-transition: height .2s;
+    -ms-transition: height .2s;
+    -webkit-transition: height .2s
+}
+
+.menu-c.hide .menu-item-cont {
+    height: 0
+}
+
+.setting-leftmenu .menu-title {
+    color: #252a33;
+    font-size: 16px
+}
+
+.menu-item {
+    margin-top: 10px;
+    display: block;
+    color: #ebae20;
+}
+
+.menu-item.active {
+    color: #1798f2
+}
+
+.setting-panel {
+    background: #fff;
+    position: relative;
+    float: right;
+    width: 980px;
+    min-height: 680px;
+    border: 1px solid #e4e9ed;
+    margin-bottom: 20px
+}
+
+.hide .icon-fold,.icon-fold {
+    background-image: url(/static/imgs/sp_order-manage_0a9f0d9bdf.png)
+}
+
+.icon-fold,.menu-c::after {
+    position: absolute;
+    left: 20px;
+    display: block
+}
+
+.setting-title {
+    font-size: 14px;
+    color: #252a33;
+    padding-left: 10px;
+    border-left: 2px solid #1798f2;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    vertical-align: bottom;
+    height: 16px;
+    line-height: 16px
+}
+
+.menu-c::after {
+    content: '';
+    right: 20px;
+    bottom: 0;
+    border-bottom: 1px dotted #b8c4ce
+}
+
+.bt::after {
+    border: 0
+}
+
+.hide .icon-fold {
+    background-position: 0 0
+}
+
+.icon-fold {
+    background-position: -13px 0;
+    height: 13px;
+    width: 13px;
+    top: 28px;
+    cursor: pointer
+}
+
+.page-left,.page-right,.pagination .pager,.table .btn,.tabs .tab {
+    display: inline-block
+}
+
+.pagination .pager {
+    cursor: pointer;
+    border: 1px solid #bdc1c9;
+    border-radius: 3px;
+    background: #fff;
+    text-align: center;
+    color: #141823;
+    margin: 0 5px
+}
+
+.pagination .pager.current {
+    background: #1798f2;
+    color: #fff;
+    border-color: #1798f2
+}
+
+.page-left,.page-right,.pager.disable .page-left,.pager.disable .page-right,.pager:active .page-left,.pager:active .page-right {
+    background-image: url(/static/imgs/sp_order-manage_0a9f0d9bdf.png)
+}
+
+.page-left {
+    background-position: 0 -13px;
+    width: 6px;
+    height: 9px
+}
+
+.page-right {
+    background-position: -6px -13px;
+    width: 6px;
+    height: 9px
+}
+
+.pager:active .page-left {
+    background-position: -12px -13px
+}
+
+.pager:active .page-right {
+    background-position: -18px -13px
+}
+
+.pager.disable .page-right {
+    background-position: -26px 0
+}
+
+.pager.disable .page-left {
+    background-position: -26px -9px
+}
+
+.table.order {
+    width: 980px;
+    border-collapse: collapse
+}
+
+.table.order thead tr {
+    background: #f9f9f9;
+    border-bottom: 1px solid #e4e9ed;
+    border-top: 1px solid #e4e9ed
+}
+
+.table.order th {
+    color: #677686;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #f9f9f9;
+    text-align: left
+}
+
+.table.order td {
+    font-size: 14px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: #252a33
+}
+
+.table .btn {
+    color: #fff;
+    background: #f1aa1e;
+    font-size: 12px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 6px;
+    border-radius: 5px;
+    margin-left: 10px;
+    min-width: 60px
+}
+
+.table.order tbody tr {
+    border-bottom: 1px solid #e4e9ed;
+    position: relative
+}
+
+.tabs {
+    position: relative;
+    background: #fff
+}
+
+.tabs .tab {
+    height: 48px;
+    line-height: 48px;
+    color: #808c9b;
+    padding: 0 7px;
+    font-size: 16px;
+    border-bottom: 2px solid #fff;
+    margin: 0 30px;
+    cursor: pointer
+}
+
+.tabs .tab.current {
+    color: #1798f2;
+    border-color: #1798f2
+}
+
+.ACTIVE .btn.reground,.DISABLED .btn.ground {
+    display: none
+}
+
+.red-text {
+    color: #ff4c39!important
+}
+
+.pagination {
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 26px
+}
+
+.pagination .pager {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px
+}
+
+.no-record {
+    text-align: center;
+    font-size: 14px;
+    color: #808c9b;
+    margin-top: 154px
+}
+
+.setting-leftmenu .menu-head {
+    padding: 6px 0;
+    text-align: center
+}
+
+.setting-panel .loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.05);
+    z-index: 100;
+    text-align: center
+}
+
+.setting-panel .loading .loading-img {
+    display: inline-block;
+    margin-top: 160px;
+    width: 28px;
+    height: 28px
+}
+@media (max-width: 414px) {
+    .setting-leftmenu {
+        float: none;
+        margin-left: 10px;
+    }
+    .adver-wrap {
+        float: none;
+    }
+    .setting-panel {
+        width: 100%;
+
+    }
+    .table .td-time {
+        display: none;
+    }
+    .table .td-country {
+        display: none;
+    }
+    .table.order {
+        width: 100%;
+    }
+    .table .ta-r {
+        padding-right: 10px!important;
+        text-align: left;
+    }
+    .table.order th {
+        min-width: 58px;
+    }
+}

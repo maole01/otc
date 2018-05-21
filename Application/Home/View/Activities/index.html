@@ -1,0 +1,82 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/activities.css">
+<div class="wrap" style="min-height: 700px;">
+    <div class="cont clear-float" >
+        <div class="col-60">
+            <div class="col-20">
+                <div class="data-h">成功邀请</div>
+                <div class="data-d">{$ztrs}<span class="data-u">人</span></div>
+            </div>
+            <div class="col-60">
+                <div class="data-h">提成收益</div>
+                <div class="data-d">{$zs}<span class="data-u">9DC</span></div>
+            </div>
+        </div>
+        <div class="col-40 ta-right">
+            <a class="btn btn-text">文字邀请</a>&nbsp;&nbsp;&nbsp;
+            <a id="codea" style="float: right"></a>
+        </div>
+
+    </div>
+
+    <div class="cont rule">
+        <div class="cont-title"><span class="cont-title-left"></span><span class="cont-title-text">活动规则</span><span class="cont-title-right"></span></div>
+        <p>1. 登陆，在“邀请好友”可以分享图片或者链接到朋友圈或者微信好友；</p>
+        <p>2. 好友成功通过您邀请链接注册并成功交易您可以获得WKC奖金，金额为交易额{$yqr_fee}%；</p>
+        <p>3. 奖金以WKC形式，在当笔交易完成之后即刻发送到您的钱包中；</p>
+        <p>4. 同一用户仅能被邀请一次；</p>
+        <br>
+        <p>举例：当您带来一个注册的用户，如果他成功交易一笔100 WKC的交易，您可以从这个交易者的交易费中赚取{$yqr_fee}%，您挣得的总数是{$yqr_fee} WKC。</p>
+    </div>
+</div>
+
+
+
+<include file="Public:footer"/>
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.qrcode.min.js"></script>
+<script>
+    $('.btn-text').click(function () {
+        layer.open({
+            type: 1,
+            skin: 'invite-text-cont', //样式类名
+            area: ['800px', '300px'],
+            title: false,
+            closeBtn: 0, //不显示关闭按钮
+            anim: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: '<div class="invite-text-cont">\n' +
+            '        <br/><p class="p">复制下面这段文字给好友，好友通过你的专属链接注册成功，你就可以享受好友的交易提成了</p>\n' +
+            '        <textarea class="textarea">安全可信赖的九鼎币场外交易平台，百万九鼎币红包赶紧来注册领取吧！{$lianjie}</textarea>\n' +
+            '    </div>'
+        });
+    })
+
+    $('#codea').qrcode({
+
+        render: "table", //table方式
+
+        width: 100, //宽度
+
+        height: 100, //高度
+
+        text: "{$lianjie}" //任意内容
+
+    });
+
+    $('.btn-pic').click(function () {
+        layer.open({
+            type: 1,
+            skin: 'invite-text-cont', //样式类名
+            area: ['800px', '300px'],
+            title: false,
+            closeBtn: 0, //不显示关闭按钮
+            anim: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: '<div class="invite-text-cont">\n' +
+            '<br/><p class="p">复制下面这段文字给好友，好友通过你的专属链接注册成功，你就可以享受好友的交易提成了</p>\n' +
+            '<textarea class="textarea">安全可信赖的九鼎币场外交易平台，百万九鼎币红包赶紧来注册领取吧！{$lianjie}</textarea>\n' +
+            '</div>'
+        });
+    })
+
+</script>

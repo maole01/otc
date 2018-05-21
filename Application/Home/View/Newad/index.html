@@ -1,0 +1,270 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/newad.css">
+<div class="pt-30"></div>
+<div class="container new-ad">
+    <h1 class="h1">发布一个广告</h1>
+    <h3 class="h3 new-ad-tit">如果您经常交易，可以发布自己的交易广告。如果您只想购买或出售一次，我们建议您直接从购买或出售列表中下单交易。<br>发布一则交易广告是免费的。<br>您的钱包中至少需要有<span class='min_balance_to_show_ad'>0.05</span>，您的广告才会显示在交易列表中。<br>发布交易广告的用户每笔完成的交易需要缴纳 <span class='advertiser_fee'>0.7%</span> 的费用。<br>您必须在交易广告或交易聊天中提供您的付款详细信息，发起交易后，价格会锁定，除非定价中有明显的错误。<br>请注意高风险有欺诈风险的付款方式。<br></h3>
+    <form id="newContent" class="form-cont clear-float">
+
+        <div class="form-title">
+            <span class="form-name">交易类型 </span>
+            <div class="line"></div>
+        </div>
+
+        <div class="input-cont  mb-20">
+            <div class="input-name clear-float">
+                <div class="require fl">交易币种:</div>
+                <select searchable class="select fl" name="crypto_currency">
+					<foreach name="coinArr" item="c">
+						<option selected value="{$c.name}">{$c.title}</option>
+					</foreach>
+                </select>
+                <span class="input-name-decs">请选择你要发布广告的币种。</span>
+            </div>
+        </div>
+
+        <div class="input-cont">
+            <div class="input-name clear-float">
+                <div class="require fl">选择广告类型:</div>
+                <div class="fl">
+                    <input type="radio" checked="" value="ONLINE_SELL" id="ONLINE_SELL" name="trade_type"><label for="ONLINE_SELL">在线出售</label>
+                    <input type="radio" value="ONLINE_BUY" id="ONLINE_BUY" name="trade_type"><label for="ONLINE_BUY">在线购买</label>
+                </div>
+                <span class="input-name-decs">您想要创建什么样的交易广告？如果您希望出售比特币，请确保您的钱包中有比特币。</span>
+            </div>
+           
+        </div>
+        <div class="input-cont  mb-20">
+
+            <div class="input-name clear-float">
+                <div class="require fl">所在地:</div>
+                    <select searchable class="select fl" name="country_code">
+                        <option selected value="cn">CN  中国</option>
+                    </select>
+                <span class="input-name-decs">请选择你要发布广告的国家。</span>
+            </div>
+           
+        </div>
+        <div class="form-title">
+            <span class="form-name">更多信息</span>
+            <div class="line"></div>
+        </div>
+        <div class="input-cont ">
+
+            <div class="input-name clear-float">
+                <div class="require fl">货币: </div>
+                <select searchable class="select fl" name="currency">
+                    <option selected value="cny">CNY  人民币</option>
+                </select>
+                <span class="input-name-decs">您希望交易付款的货币类型。</span>
+            </div>
+            
+        </div>
+        <div class="input-cont ">
+            <div class="input-name clear-float">
+                <div class="require fl">价格:</div>
+                <div class="fl">
+                    <input class="input" name="price" type="number" validate placeholder="请输入价格">
+                    <div class="input-after input-currency">CNY</div>
+                </div>
+                <span class="input-name-decs">您出售的比特币价格(小数点后最多2位)</span>
+            </div>
+
+        </div>
+        <div class="input-cont ">
+            <div class="input-name clear-float">
+                <span class="require fl">最小限额:</span>
+                <div class="fl">
+                    <input class="input" type="number" name="min_amount" validate check-type="min_amount"  placeholder="请输入最小限额, 大于50">
+                    <div class="input-after input-currency">CNY</div>
+                    <div class="form-tips"></div>
+                    <div class="error-msg">最小交易额不可大于最大交易额，且大于或等于50</div>  
+                </div>
+                <span class="input-name-decs">一次交易的最低的交易限制。</span>
+            </div>
+           
+            
+        </div>
+        <div class="input-cont ">
+            <div class="input-name clear-float">
+                <span class="require fl">最大限额:</span>
+                <div class="fl">
+                    <input class="input" type="number" name="max_amount" validate check-type="max_amount"  placeholder="请输入最大限额">
+                    <div class="input-after input-currency" >CNY</div>
+                    <div class="form-tips"></div>
+                    <div class="error-msg">最大交易额不可小于最小交易额</div> 
+                </div>
+                <span class="input-name-decs">一次交易中的最大交易限制，您的钱包余额也会影响最大量的设置。</span>
+            </div>
+        </div>
+        <div class="input-cont input-payment_window_minutes" style="display: none">
+            <div class="input-name clear-float">
+                <span class="require fl">付款期限:</span>
+                <div class="fl">
+                    <input class="input" type="number" name="payment_window_minutes" validate check-type="payment_window_minutes" placeholder="付款期限">
+                    <div class="form-tips"></div>
+                    <div class="error-msg">付款期限设置范围: 5-45分钟</div>
+                </div>
+                <span class="input-name-decs">您承诺在此期限内付款（分钟）</span>
+            </div>
+
+        </div>
+        <div class="input-cont">
+            <div class="input-name clear-float">
+                <div class="require fl">收款方式: </div>
+                <select class="select fl" name="payment_provider" searchable>
+
+                    <option value="national_bank">银行转账</option>
+
+                    <option value="alipay">支付宝</option>
+
+                    <option value="wechat_pay">微信支付</option>
+
+                    <option value="other">其它</option>
+
+                </select>
+            </div>
+           
+        </div>
+        <div class="input-cont">
+            <div class="input-name clear-float">
+                <div class="require fl">广告留言: </div>
+                <div class="fl">
+                    <textarea class="input textarea" name="message" validate check-type="message" placeholder="请说明有关您交易的相关条款或备注您的支付方式，如微信号，支付宝号等，以便对方可以快速和您交易。（下单前后都可见）"></textarea>
+                    <div class="form-tips"></div>
+                    <div class="error-msg">请输入少于4096字</div>
+                </div>
+                <span class="input-name-decs"></span>
+            </div>
+
+        </div>
+        <div class="line"></div>
+        <div class="pt-30"></div>
+        <a id="submit" class="btn submit" href="javascript:;">立即发布</a>
+        <div class="pt-30"></div>
+    </form>
+</div>
+<include file="Public:footer"/>
+
+<script>
+    $(function () {
+        $(":radio").click(function() {
+           if($(this).val()=='ONLINE_SELL'){
+                $('.input-payment_window_minutes').css('display','none');
+           } else {
+                $('.input-payment_window_minutes').css('display','');
+           }
+
+        });
+    })
+    $('#submit').click(function () {
+         var trade_type=$('input:radio:checked').val();
+         var country=$('[name=country_code]').val();
+         var currency=$('[name=currency]').val();
+         var price=$('[name=price]').val();
+         var min_amount=$('[name=min_amount]').val();
+         var max_amount=$('[name=max_amount]').val();
+         var paytime=$('[name=payment_window_minutes]').val();
+         var provider=$('[name=payment_provider]').val()
+         var message=$('[name=message]').val();
+         var coin=$('[name=crypto_currency]').val();
+         if(price==''){
+             layer.msg('请输入价格', {
+                 icon: 2
+             });
+             return false;
+         }
+         if(!(/^([1-9]\d*|0)(\.\d{1,2})?$/.test(price))){
+             layer.msg('价格输入错误', {
+                 icon: 2
+             });
+             return false;
+         }
+         if(min_amount==''){
+             layer.msg('请输入最小限额', {
+                 icon: 2
+             });
+             return false;
+         }
+         if(!(/^[1-9]\d*$/.test(min_amount))){
+             layer.msg('最小限额不能为小数', {
+                 icon: 2
+             });
+             return false;
+         }
+        if(min_amount<50){
+            layer.msg('最小限额不能低于50', {
+                icon: 2
+            });
+            return false;
+        }
+
+         if(max_amount==''){
+             layer.msg('请输入最大限额', {
+                 icon: 2
+             });
+             return false;
+         }
+
+        if(!(/^[1-9]\d*$/.test(max_amount))){
+            layer.msg('最大限额不能为小数', {
+                icon: 2
+            });
+            return false;
+        }
+
+         if(parseInt(min_amount)>parseInt(max_amount)){
+             layer.msg('最大限额不能低于最小限额', {
+                 icon: 2
+             });
+             return false;
+         }
+         if(trade_type=='ONLINE_BUY'){
+             if(paytime==''){
+                 layer.msg('付款期限不能为空', {
+                     icon: 2
+                 });
+                 return false;
+             }
+             if(paytime>60){
+                 layer.msg('付款期限不能大于60分钟', {
+                     icon: 2
+                 });
+                 return false;
+             }
+         }
+
+         if(message==''){
+             layer.msg('广告留言不能为空', {
+                 icon: 2
+             });
+             return false;
+         }
+
+         $.post('{:U("Newad/index")}',{
+             trade_type:trade_type,
+             country:country,
+             currency:currency,
+             price:price,
+             min_amount:min_amount,
+             max_amount:max_amount,
+             paytime:paytime,
+             provider:provider,
+             message:message,
+             coin:coin,
+         },function (data) {
+              if(data.status){
+                  layer.msg(data.info, {
+                      icon: 1
+                  });
+                  location.href='{:U("Manage/adsell")}';
+              } else {
+                  layer.msg(data.info, {
+                      icon: 2
+                  });
+              }
+         })
+
+
+    })
+</script>

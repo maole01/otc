@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<link rel="stylesheet" type="text/css" href="./Css/cache_20180120.css"/>
+		<link rel="stylesheet" type="text/css" href="./Css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="./Css/default.css">
+		<link rel="stylesheet" media="screen" href="./Css/style.css">
+		<script src='./Js/jquery-3.2.1.min.js'></script>
+		<style>
+			.title{font-size:40px;text-align:center;padding:60px 0px 40px;}
+			.divl{
+				background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/jiantou_3.svg") 92% 16px no-repeat,#fff;height:20px;width:168px;border:1px solid #aaa;font-size:20px;color:#444;padding:12px;float:left;
+			}
+			.nextPar{
+				width:30px;
+			}
+			.nextPar>div:nth-child(1){
+				border:15px solid transparent;
+				border-top:20px solid #ccc;
+			}
+			.nextPar:hover div:nth-child(1){
+				border-top-color:#fff;
+			}
+			ul.jq-ul4-diaplayl>li{
+				border-radius:0px;
+				margin:0px;
+			}
+			ul.jq-ul4-diaplayl>li:nth-child(4n-3){
+				border-left:none;
+			}
+			ul.jq-ul4-diaplayl>li:nth-child(-n+4){
+				border-top:none;
+			}
+			ul.jq-ul3-displayl>li{
+				margin:0px;
+			}
+			ul.jq-ul3-displayl2>li{
+				margin:0px;
+				padding:10px;
+			}
+			div#lastDiv>div:nth-child(1){
+				border:30px solid transparent;border-bottom:30px solid #ddd;botder-top:none;margin:auto;width:0px;
+			}
+			div#lastDiv>div:nth-child(1):hover{
+				border-bottom-color:#fa0;
+			}
+		</style>
+	</head>
+	<body style='overflow:hidden;width:100%;'>
+		<div id='overflowBody' style='overflow:scroll;width:1300px;'>
+			<ul class='ul-list2-bw' class='ces cesdiv width_body' style='width:100%;'>
+				<li style=''>
+					<div id='nav-triangle' id='index'>
+						<div class='logo' style='border-top-width:220px;width:40%;position:relative;'>
+							<div style='position:absolute;top:-220px;left:-100px;background:url("./Image/logo1.png") 0px 0px no-repeat;background-size:100%;width:180px;height:180px;'></div>
+						</div>
+						<div class='menu'>
+							<div id='nav-auto' style='background:#000;'>
+								<div>
+									<ul>
+										<li class='index'><a href='#' class='locaIndex' value='index'>BTC</a></li>
+										<li><a href='#' class='locaIndex' value='project'>项目</a></li>
+										<li><a href='#' class='locaIndex' value='technology'>技术</a></li>
+										<li><a href='#' class='locaIndex' value='team'>团队</a></li>
+										<li><a href='#' class='locaIndex' value='blog'>博客</a></li>
+									</ul>
+									<!--	logo -->
+									<div id='logo' style='background:url("./Image/logo1.png") 0px 0px no-repeat;background-size:80%;'></div>
+									<ul>
+										<li><a href='#' class='locaIndex' value='transaction'>交易</a></li>
+										<li><a href='#' class='locaIndex' value='media'>媒体</a></li>
+										<li><a href='#' class='locaIndex' value='contactus'>关于我们</a></li>
+										<li><a href='./index.html' >English</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<ul>
+						<li style='text-align:center;'>
+							<p style='color:#aaa;font-size:48px;font-weight:500;margin:100px 0px 10px;'>比原链</p>
+							<p style='font-size:18px;color:#aaa;'>BYTOM</p>
+							<p style='padding:40px 0px;margin:10px 0px;font-size:40px;color:#aaa;'>让资产从原子世界跃迁至比特世界 </p>
+							<div class='nextPar' style='margin:auto;'>
+								<div style=''> </div>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div>
+						<p class='title' id='project'>{&nbsp;项目&nbsp;}
+							
+						</p>
+						<p style='font-size:20px;text-align:center;margin:20px auto;line-height:38px;width:1100px;'>比原链（Bytom）是一种多样性比特资产的区块链交互协议，运行在比原链上的不同类型资产（收益权、非上市股权、债权、数字货币等）可以通过该协议进行交换、对赌和基于智能合约的复杂性交互操作。</p>
+						<div style='height:40px;margin:20px 0px;'>
+							<div style='margin:auto;width:474px;'>
+								<a href='#' download='技术白皮书'><div class='divl' >技术白皮书下载</div></a>
+								<a href='#' download='技术白皮书'><div class='divl' style='margin-left:80px;'>经济白皮书下载</div></a>
+							</div>
+						</div>
+						<div style='width:1100px;height:580px;margin:40px auto;'>
+							<video style='width:100%;heigh:100%;' controls="controls" src=''>
+							  <source src="movie.ogg" type="video/ogg">
+							  <source src="movie.mp4" type="video/mp4">
+							</video>
+							<!--	是否需要设置模拟点击？ -->
+							<div></div>
+						</div>
+					</div>
+					<div>
+						<p class='title' id='technology'>{&nbsp;技术&nbsp;}</p>
+						<ul class='jq-ul4-display jq-ul4-diaplayl' style='width:1100px;margin:auto;'>
+							<li class='div3'>
+								<div style='background:url('') 0px 0px no-repeat;background-size:100%;'></div>
+								<p>UTXO兼容</p>
+								<p>比原链由三层组成，数据交易及传输层、合约层、资产交互层。资产交互层通过调用合约来对资产进行操作，其中在在数据交易及传输层，兼容比特币的UTXO模型和交易数据结构，以实现高速并发和可控匿名。</p>
+							</li>
+							<li class='div3'>
+								<div style='background:url('') 0px 0px no-repeat;background-size:100%;'></div>
+								<p>通用地址格式</p>
+								<p>比原链钱包将引入BIP32，BIP43，BIP44理念，用Hierarchical Deterministic Wallets (or "HD Wallets")提供对多币种、多账户、多地址、多密钥的支持。</p>
+							</li>
+							<li class='div3'>
+								<div style='background:url('') 0px 0px no-repeat;background-size:100%;'></div>
+								<p>支持国密标准</p>
+								<p>比原链支持国密SM2椭圆曲线公钥密码算法和SM3密码杂凑算法。在实现同样的计算复杂度时，SM2在私钥的处理速度上远快于RSA、DSA算法，加密效率更高。SM3算法的压缩函数与SHA-256的压缩函数具有相似的结构，但是SM3算法的设计更加复杂，比如压缩函数的每一轮都使用2个消息字。</p>
+							</li>
+							<li class='div3'>
+								<div style='background:url('') 0px 0px no-repeat;background-size:100%;'></div>
+								<p>对人工智能ASIC友好</p>
+								<p>在共识机制中引入新型POW算法，在哈希计算过程中融入矩阵计算和卷积计算，实现对人工智能ASIC芯片友好，使得矿机在闲置或被淘汰后可以为人工智能深度学习提供硬件加速服务。</p>
+							</li>
+							<li class='div3'>
+								<div style='background:url('') 0px 0px no-repeat;background-size:100%;'></div>
+								<p>资产命名采用ODIN标识</p>
+								<p>链上资产的命名采用ODIN（Open Data Index Name）开放数据索引命名标准，利用区块链透明可信、不可篡改特性，保障资产的全网、全链唯一性。与其它基于区块链的标识解决方案不同的是，ODIN基于比特币区块链，支持扩展多级标识引入其它区块链（公有链、联盟链、私有链），不是以抢注字符串的方式，而是用区块记录位置作为标识名称。</p>
+							</li>
+							<li class='div3'>
+								<div style='background:url('') 0px 0px no-repeat;background-size:100%;'></div>
+								<p>数据与签名分离</p>
+								<p>设计了一种多种资产可以互相交易发布的分布式账本协议。用该协议的多条链可以独立的存在， 并且可以跨链交易， 这样不同的运营商可以以相同的形式互相交易。坚持最小权限原则，其中比原链的区块设计中将数据和见证（Witness）、签名部分分离，以实现资产的管理和分布式账本同步控制相分离。造就了更好的可编程性和合约支持，并且为之后的旁路通道预留接口。</p>
+							</li>
+							<li class='div3'>
+								<div style='background:url('') 0px 0px no-repeat;background-size:100%;'></div>
+								<p>增强的交易灵活性</p>
+								<p>BUTXO 与以太坊账户模型不同，可以并行验证交易，只要用类似于nonce的机制保证每一个未花费outputs最多只能被一笔交易所引用。比原链比以太坊更瘦，不需要完整的世界状态， 参与者只需要记住未花费的outputs就可了，因为交易会自带其他相关信息（如资产ID, 量额，控制程序），支持超轻客户端。比原链支持compact 验证，只允许客户端验证块中所相关的交易，而不需要验证所有的交易，只要信任签名者的数量即可，整个过程使用Merkle证明。</p>
+							</li>
+							<li class='div3'>
+								<div style='background:url('') 0px 0px no-repeat;background-size:100%;'></div>
+								<p>基于侧链的跨链分红</p>
+								<p>开发者可以在比原链上创建一种小型版本的X链（其他链X）中继器Xrelay，并从智能合约向X链中继器进行API调用，来验证X链网络活动，实现跨链通信，从而在合约中完成交易和分红操作。</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<p class='title' style='color:#eee;' id='team'>{&nbsp;团队&nbsp;}</p>
+					<ul class='jq-ul3-display jq-ul3-displayl' style='width:1100px;margin:auto;'>
+						<li>
+							<div class='divBC1'>
+								<div>
+									<img src='' style='width:175px;height:196px;'/>
+									<p>朱长江</p>
+								</div>
+								<p>著名科幻作家，巴比特创始人，长期致力于区块链技术推广与理论研究，区块链“不可能三角”理论提出者，出版有国内第一本比特币专著《比特币：一个真实而虚幻的金融世界》、《区块链：从数字货币到信用社会》以及科幻小说集《星际掠食》等，曾获2006、2007、2008中国科幻小说最高奖“银河奖”。</p>
+							</div>
+						</li>
+						<li>
+							<div class='divBC1'>
+								<div>
+									<img src='' style='width:175px;height:196px;'/>
+									<p>朱长江</p>
+								</div>
+								<p>著名科幻作家，巴比特创始人，长期致力于区块链技术推广与理论研究，区块链“不可能三角”理论提出者，出版有国内第一本比特币专著《比特币：一个真实而虚幻的金融世界》、《区块链：从数字货币到信用社会》以及科幻小说集《星际掠食》等，曾获2006、2007、2008中国科幻小说最高奖“银河奖”。</p>
+							</div>
+						</li>
+						<li>
+							<div class='divBC1'>
+								<div>
+									<img src='' style='width:175px;height:196px;'/>
+									<p>朱长江</p>
+								</div>
+								<p>著名科幻作家，巴比特创始人，长期致力于区块链技术推广与理论研究，区块链“不可能三角”理论提出者，出版有国内第一本比特币专著《比特币：一个真实而虚幻的金融世界》、《区块链：从数字货币到信用社会》以及科幻小说集《星际掠食》等，曾获2006、2007、2008中国科幻小说最高奖“银河奖”。</p>
+							</div>
+						</li>
+						<li>
+							<div class='divBC1'>
+								<div>
+									<img src='' style='width:175px;height:196px;'/>
+									<p>朱长江</p>
+								</div>
+								<p>著名科幻作家，巴比特创始人，长期致力于区块链技术推广与理论研究，区块链“不可能三角”理论提出者，出版有国内第一本比特币专著《比特币：一个真实而虚幻的金融世界》、《区块链：从数字货币到信用社会》以及科幻小说集《星际掠食》等，曾获2006、2007、2008中国科幻小说最高奖“银河奖”。</p>
+							</div>
+						</li>
+						<li>
+							<div class='divBC1'>
+								<div>
+									<img src='' style='width:175px;height:196px;'/>
+									<p>朱长江</p>
+								</div>
+								<p>著名科幻作家，巴比特创始人，长期致力于区块链技术推广与理论研究，区块链“不可能三角”理论提出者，出版有国内第一本比特币专著《比特币：一个真实而虚幻的金融世界》、《区块链：从数字货币到信用社会》以及科幻小说集《星际掠食》等，曾获2006、2007、2008中国科幻小说最高奖“银河奖”。</p>
+							</div>
+						</li>
+						<li>
+							<div class='divBC1'>
+								<div>
+									<img src='' style='width:175px;height:196px;'/>
+									<p>朱长江</p>
+								</div>
+								<p>著名科幻作家，巴比特创始人，长期致力于区块链技术推广与理论研究，区块链“不可能三角”理论提出者，出版有国内第一本比特币专著《比特币：一个真实而虚幻的金融世界》、《区块链：从数字货币到信用社会》以及科幻小说集《星际掠食》等，曾获2006、2007、2008中国科幻小说最高奖“银河奖”。</p>
+							</div>
+						</li>
+						<li>
+							<div class='divBC1'>
+								<div>
+									<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/ggh.png' style='width:175px;height:196px;'/>
+									<p>朱长江</p>
+								</div>
+								<p>著名科幻作家，巴比特创始人，长期致力于区块链技术推广与理论研究，区块链“不可能三角”理论提出者，出版有国内第一本比特币专著《比特币：一个真实而虚幻的金融世界》、《区块链：从数字货币到信用社会》以及科幻小说集《星际掠食》等，曾获2006、2007、2008中国科幻小说最高奖“银河奖”。</p>
+							</div>
+						</li>
+						<li>
+							<div class='divBC1'>
+								<div>
+									<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/jia.jpg' />
+									<p>加入我们</p>
+								</div>
+								<p></p>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div>
+						<p class='title' id='blog'>{&nbsp;博客&nbsp;}</p>
+						<ul class='jq-ul3-display jq-ul3-displayl' style='margin:20px auto;width:1100px;'>
+							<li>
+								<a href=''>
+									<div class='div4' style='background:url("https://bytom.io/wp-content/uploads/2017/07/blog.jpg") 0px 0px no-repeat;background-size:100%;'>
+										<p>比原链挖矿算法</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='div4' style='background:url("https://bytom.io/wp-content/uploads/2017/07/blog.jpg") 0px 0px no-repeat;background-size:100%;'>
+										<p>比原链挖矿算法</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='div4' style='background:url("https://bytom.io/wp-content/uploads/2017/07/blog.jpg") 0px 0px no-repeat;background-size:100%;'>
+										<p>比原链挖矿算法</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='div4' style='background:url("https://bytom.io/wp-content/uploads/2017/07/blog.jpg") 0px 0px no-repeat;background-size:100%;'>
+										<p>比原链挖矿算法</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='div4' style='background:url("https://bytom.io/wp-content/uploads/2017/07/blog.jpg") 0px 0px no-repeat;background-size:100%;'>
+										<p>比原链挖矿算法</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='div4' style='background:url("https://bytom.io/wp-content/uploads/2017/07/blog.jpg") 0px 0px no-repeat;background-size:100%;'>
+										<p>比原链挖矿算法</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<p class='title' id='transaction'>{&nbsp;交易&nbsp;}</p>
+						<ul class='list-repeat' style='width:1100px;'>
+							<li class='index'>对BTC</li>
+							<li>对ETC</li>
+							<li>对USDT</li>
+						</ul>
+						<ul class='jq-ul3-display jq-ul3-displayl2' style='width:1200px;margin:auto;'>
+							<li>
+								<a href=''>
+									<div class='h-b-c555' style='border:1px solid #ccc;width:356px;height:150px;background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/HITBTC.png") -58px -74px no-repeat;'>
+										
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='h-b-c555' style='border:1px solid #ccc;width:356px;height:150px;background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/HITBTC.png") -58px -74px no-repeat;'>
+										
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='h-b-c555' style='border:1px solid #ccc;width:356px;height:150px;background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/HITBTC.png") -58px -74px no-repeat;'>
+										
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='h-b-c555' style='border:1px solid #ccc;width:356px;height:150px;background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/HITBTC.png") -58px -74px no-repeat;'>
+										
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='h-b-c555' style='border:1px solid #ccc;width:356px;height:150px;background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/HITBTC.png") -58px -74px no-repeat;'>
+										
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='h-b-c555' style='border:1px solid #ccc;width:356px;height:150px;background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/HITBTC.png") -58px -74px no-repeat;'>
+										
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='h-b-c555' style='border:1px solid #ccc;width:356px;height:150px;background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/HITBTC.png") -58px -74px no-repeat;'>
+										
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='h-b-c555' style='border:1px solid #ccc;width:356px;height:150px;background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/HITBTC.png") -58px -74px no-repeat;'>
+										
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='h-b-c555' style='border:1px solid #ccc;width:356px;height:150px;background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/HITBTC.png") -58px -74px no-repeat;'>
+										
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=''>
+									<div class='h-b-c555' style='border:1px solid #ccc;width:356px;height:150px;background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/HITBTC.png") -58px -74px no-repeat;'>
+										
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div style='position:relative;z-index:3;'>
+						<p class='title' style='color:#eee;position:relative;z-index:3;' id='media'>{&nbsp;媒体&nbsp;}</p>
+						<div style='position:absolute;z-index:2;top:0px;background:#000;width:100%;height:100%;opacity:0.3;'></div>
+						<ul class='jq-ul6-display'>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+							<li class='div1'  href='#'>
+								<img src='http://bytom.io/wp-content/themes/news/bytom-ui/img/y-o.svg'/>
+							</li>
+						</ul>
+					</div>
+					<div style='padding-bottom:60px;'>
+						<p class='title' style='color:#eee;background:#000;' id='contactus'>{&nbsp;联系我们&nbsp;}</p>
+						<div style='height:100%;'>
+							<div style='float:left;height:400px;width:40%;'>
+								<div style='height:90%;width:100%;'>
+									<div style='float:left;width:19%;height:100%;background:#000;'></div>
+									<div style='width:80%;height:100%;border:1px solid #ccc;float:right;box-shadow:0px 0px 20px #000;'>
+										<div style='width:100%;height:100%;background:url("./Image/logo1.png") 0px 0px no-repeat;background-size:80%;'></div>
+									</div>
+								</div>
+								<div style='height:10%;background:#000;width:100%;'></div>
+							</div>
+							<div style='float:left;background:#000;width:10%;height:400px;'></div>
+							<div class='list-repeat-y' style='width:50%;float:left;height:400px;background:#000;'>
+								<ul>
+									<li style='font-size:24px;color:#eee;padding:10px;margin-bottom:10px;'>
+										邮箱:123456789@qq.com
+									</li>
+									<li style='font-size:24px;color:#eee;padding:10px;margin-bottom:10px;'>
+										微博:123456789@qq.com
+									</li>
+									<li style='font-size:24px;color:#eee;padding:10px;margin-bottom:10px;'>
+										Facebook:123456789@qq.com
+									</li>
+								</ul>
+								<ul class='list-repeat'>
+									<li style='background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/github.svg") 0px 0px no-repeat;background-size:44px;'>
+										<a href='http://bytom.io/wp-content/themes/news/bytom-ui/img/github.svg'>
+											<div style='height:100%;width:100%;padding-left:10px;'>
+												随意
+											</div>
+										</a>
+									</li>
+									<li style='background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/github.svg") 0px 0px no-repeat;background-size:44px;'>
+										<a href='http://bytom.io/wp-content/themes/news/bytom-ui/img/github.svg'>
+											<div style='height:100%;width:100%;padding-left:10px;'>
+												随意
+											</div>
+										</a>
+									</li>
+									<li style='background:url("http://bytom.io/wp-content/themes/news/bytom-ui/img/github.svg") 0px 0px no-repeat;background-size:44px;'>
+										<a href='http://bytom.io/wp-content/themes/news/bytom-ui/img/github.svg'>
+											<div style='height:100%;width:100%;padding-left:10px;'>
+												随意
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<!--	滚动条 -->
+			<div id='scrollDesc' style='height:100%;width:13px;border-left:1px solid #fff;border-right:#000;background:#111;position:fixed;top:0px;right:0px;z-index:9999;border-radius:8px;'>
+				<div id='jq-menu1' style='height:100%;top:0px;'>
+					<ul>
+						<li class='locaIndex' value='index' style='margin-top:-4px;'>
+							<div style='width:100%;height:100%;background:url("./Image/logo1.png") 20px 0px no-repeat;background-size:40%;'></div>
+						</li>
+						<li class='locaIndex' value='project' style='margin-top:0px;'>
+							项目
+						</li>
+						<li class='locaIndex' value='technology' style='margin-top:110px;'>
+							技术
+						</li>
+						<li class='locaIndex' value='team' style='margin-top:92px;'>
+							团队
+						</li>
+						<li class='locaIndex' value='blog' style='margin-top:200px;'>
+							博客
+						</li>
+						<li class='locaIndex' value='transaction' style='margin-top:80px;'>
+							交易
+						</li>
+						<li class='locaIndex' value='media' style='margin-top:116px;'>
+							媒体
+						</li>
+						<li class='locaIndex' value='contactus' style='margin-top:6px;'>
+							联系
+						</li>
+					</ul>
+					<div id='scrillPointer' style='border:16px solid transparent;border-right:30px solid #fa0;border-left:none;position:absolute;top:4px;width:0px;right:-6px;background:none;'></div>
+				</div>
+				<div id='scrollDiv' style='height:60px;width:4px;position:fixed;top:0px;border:4px solid #cdcdcd;right:1px;z-index:9999;background:#fff;border-radius:8px;'>
+				</div>
+			</div>
+			<!--	上下翻页 -->
+			<div id='TDswitch'>
+				
+			</div>
+			<!--	返回最顶 -->
+			<div id='lastDiv' style='position:fixed;z-index:9998;bottom:0px;width:100%;'>
+				<div class='cursor-2' id='scrollTop0'></div>
+				<div style='height:30px;background:#111;width:100%;opacity:0.9;text-align:center;color:#fff;font-size:20px;line-height:30px;border-top:1px solid #444;'>
+					返回顶部
+				</div>
+			</div>
+			<div id="particles-js" style='z-index:-1;position:fixed;top:0px;'></div>
+		</div>
+		<script>
+			/*
+				
+			*/$('.locaIndex').click(function(){
+					var t = 0;
+					switch($(this).attr('value')){
+						case 'index':
+							t = 0;
+							break;
+						case 'project':
+							t = 50;
+							break;
+						case 'technology':
+							t = 205;
+							break;
+						case 'team':
+							t = 340;
+							break;
+						case 'blog':
+							t = 582;
+							break;
+						case 'transaction':
+							t = 707;
+							break;
+						case 'media':
+							t = 868;
+							break;
+						case 'contactus':
+							t = height - scrollH;
+							break;
+					}
+					$('div#scrollDiv').css('top', t + 'px');
+					scrollDisplay();
+				});
+			
+			$('div#jq-menu1').children('ul').html(function(){
+				var len = $(this).children().length;
+				var w = $(this).width() / 2;
+				$.each($(this).children(),function(){
+					var index = $(this).index();
+					if(index == 0){
+						var h = parseFloat($(this).css('marginBottom'));
+					}else if(index == ( len - 1 )){
+						var h = 0;
+					}else{
+						var nobj = $(this).parent().children().eq((index + 1));
+						var mt = parseFloat(nobj.css('marginTop'));
+						nobj.css('marginTop','0px');
+						var mb = parseFloat($(this).css('marginBottom'));
+						$(this).css('marginBottom','0px');
+						var h = mt + mb;
+					}
+					$(this).after('<div style="height:' + h + 'px;margin:auto;width:' + w + 'px;border-left:1px dashed #bbb;border-right:1px dashed #bbb;"></div>');
+				});
+			});
+			
+			$('#scrollDesc').hover(function(){
+				
+			},function(){
+				
+			});
+			$('div#jq-menu1').stop().animate({opacity:'0'},400);
+			function scrollDescAction(){
+				$('div#scrollDiv').hover(function(){
+					$('div#jq-menu1').stop().animate({opacity:'1'},300);
+				},function(){
+					$('div#jq-menu1').stop().animate({opacity:'0'},400);
+				});
+			}
+			scrollDescAction();
+			var lobj = $('#nav-triangle').children('.logo');
+			var mobj = $('#nav-triangle').children('.menu');
+			mobj.css('display','block');
+			var mh = (mobj.children().outerHeight(true) + 10);
+			mobj.children().css('top',-mh);
+			lobj.css('width','80%');
+			var lw = lobj.width();
+			lobj.css('width','0px');
+			lw = lw / 2;
+			lobj.attr('tw',lobj.css('borderTopWidth'));
+			lobj.attr('lrw',lw + 'px');
+			
+			$('#scrollTop0').click(function(){
+				$('div#overflowBody').animate({marginTop:'0px'},500);
+				$('div#scrollDiv').animate({top:'0px'},500);
+			});
+			var width = $(window).width();
+			var height = document.documentElement.clientHeight;
+			var overflowBodyH = (parseFloat($('div#overflowBody')[0].offsetHeight) - 100);
+			overflowBodyH = 5760;
+			var scrollH = scrollDivH();
+			
+			$(window).scroll(function(event){
+				var height = $('.ces').scrollTop();
+			});
+			$('div#overflowBody').width(function(){
+				var width = (parseFloat($('body').width()) + 20);
+				return width;
+			});
+			$('.width_body').width(function(){
+				return $('body').width();
+			})
+			$(window).resize(function(){
+			
+				$('div#overflowBody').width(function(){
+					var width = (parseFloat($('body').width()) + 20);
+					return width;
+				});
+				$('div#overflowBody').children('ul').css('width','100%');
+				width = $(window).width();
+				height = document.documentElement.clientHeight;
+				scrollDivH();
+				$('div#scrollDiv').css('top',scrollDivV());
+			});
+			
+			$('div#scrollDiv').attr('h',height);
+			$('div#scrollDiv').attr('dh',function(){
+				return $(this).height();
+			});
+			window.onload = function(){
+				height = document.documentElement.clientHeight;
+				var oDiv=document.getElementById('scrollDiv');
+				var distY=0;  
+				lH = height - scrollH;
+				oDiv.onmousedown=function(ev){  
+					var oEvent=ev||event;
+					distY=oEvent.clientY-oDiv.offsetTop;  
+					document.onmousemove=function(ev){  
+						var oEvent=ev||event;  
+						var y=oEvent.clientY-distY;
+						if(y<0){  
+							y=0;  
+						}
+						if(y > lH){
+							y = lH;
+						}
+						oDiv.style.top=y+'px';
+						scrollDisplay();
+					}  
+					document.onmouseup=function(){  
+						document.onmousemove=null;  
+						document.onmouseup=null;  
+					}  
+				}  
+			}
+			
+			window.onmousewheel = function(e){
+				//	负	下，正	上
+				if(e.wheelDelta > 0){
+					scrollUp();
+				}else{
+					scrollDow();
+				}
+				jqmenu1Action();
+				scrollDisplay();
+			};
+			
+			document.body.addEventListener("DOMMouseScroll", function(e) {
+				//	正	上，负	下
+				if(e.detail < 0){
+					scrollUp();
+				}else{
+					scrollDow();
+				}
+				jqmenu1Action();
+				scrollDisplay();
+			});
+			var ljqmenu1;
+			$('div#jq-menu1').hover(function(){
+				$('div#jq-menu1').stop().css('opacity','1');
+			},function(){
+				$('div#jq-menu1').stop().animate({opacity:'0'},200);
+			});
+			function jqmenu1Action(){
+				ljqmenu1 = null;
+				$('div#jq-menu1').stop().animate({opacity:'1'},200);
+				ljqmenu1 = setTimeout(function(){
+					$('div#jq-menu1').stop().animate({opacity:'0'},400);
+				},1000);
+			}
+			function scrollUp(){
+				var obj = $('div#scrollDiv');
+				var num = 10;
+				var t = parseFloat(obj.css('top'));
+				if(0 > (t = t - 10)){
+					t = 0;
+				}
+				obj.css('top',t);
+			}
+			function scrollDow(){
+				var obj = $('div#scrollDiv');
+				var num = 10;
+				var lH = height - scrollH;
+				var t = parseFloat(obj.css('top'));
+				if(lH < (t = t + 10)){
+					t = lH;
+				}
+				obj.css('top',t);
+			}
+			
+			
+			function scrollDisplay(){
+				var obj = $('div#scrollDiv');
+				var h = height - scrollH;
+				var t = parseFloat(obj.css('top'));
+				$('div#scrillPointer').css('top', (t + 4) + 'px');
+				var artio = t / h;
+				var num = (overflowBodyH - 100) * artio;
+				navTraingrDisplay(num);
+				$('div#overflowBody').css('marginTop','-' + num + 'px');
+			}
+			
+			function scrollDivH(){
+				if(overflowBodyH > height){
+					var obj = $('div#scrollDiv');
+					obj.css('display','block');
+					obj.height(function(){
+						var h = 0;
+						var num = overflowBodyH - height;
+						switch(num){
+							case num < 50:
+								h = height - num;
+								break;
+							case num < 1500:
+								h = (height - 50) - parseInt(num / 50);
+								break;
+							default:
+								h = 36;
+						}
+						return h;
+					});
+					return obj.outerHeight(true);
+				}else{
+					$('div#scrollDiv').css('display','none');
+				}
+			}
+			
+			function navTraingrDisplay(num){
+				if(num > 100){
+					mobj.children().stop().animate({top:'0px'},200);
+					lobj.stop().animate({borderTopWidth:'0px',borderLeftWidth:'0px',borderRightWidth:'0px'},200);
+				}else{
+					var tw = lobj.attr('tw');
+					var lrw = lobj.attr('lrw');
+					lobj.stop().animate({borderTopWidth:tw,borderLeftWidth:lrw,borderRightWidth:lrw},200);
+					mobj.children().stop().animate({top:-mh + 'px'},200);
+				}
+			}
+			
+			function scrollDivV(){
+				var value = 0;
+				var obj = $('div#scrollDiv');
+				var h = obj.attr('h');
+				var dh = obj.attr('dh');
+				obj.attr('h',height);
+				obj.attr('dh',obj.height());
+				dh = dh - obj.height();
+				var t = parseFloat(obj.css('top'));
+				var ratio = t / h;
+				value = ((height - dh) * ratio);
+				return value;
+			}
+			
+		</script>
+	</body>
+</html>
+<script src='./Js/index.js'></script>
+<script src="./Js/particles.js"></script>
+<script src="./Js/app.js"></script>

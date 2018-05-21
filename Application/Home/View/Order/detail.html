@@ -1,0 +1,572 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/order.css">
+
+<div class="container order clear-float">
+    <br/>
+    <br/>
+    <br/>
+
+    <div class="status-text-b">
+
+                <if condition="$Think.session.userid eq $orderinfo['buyid']">
+                    <span class="stage-text">{$buy_stage_text}</span>
+                    <span class="v-line"></span>
+                    <span class="status-decs">{$buy_status_decs}</span>
+                    <elseif condition="$Think.session.userid eq $orderinfo['sellid']"/>
+                    <span class="stage-text">{$sell_stage_text}</span>
+                    <span class="v-line"></span>
+                    <span class="status-decs">{$sell_status_decs}</span>
+                </if>
+
+    </div>
+
+    <div class="order-info">
+        <strong>订单信息</strong>
+        <span class="item-name">交易价格: {$orderinfo.price|round=###,2} CNY</span>
+        <span class="item-name"> 交易数量: {$orderinfo.num} {$orderinfo['coin']|strtoupper}</span>
+        <span class="item-name">交易金额: {$orderinfo.amount} CNY</span>
+        <switch name="ordertype">
+            <case value="0">
+                <if condition="$Think.session.userid eq $orderinfo['sellid']">
+                    <span class="item-name">手续费: {$orderinfo.fee} {$orderinfo['coin']|strtoupper}</span>
+                </if>
+            </case>
+            <case value="1">
+                <if condition="$Think.session.userid eq $orderinfo['buyid']">
+                    <span class="item-name">手续费: {$orderinfo.fee} {$orderinfo['coin']|strtoupper}</span>
+                </if>
+            </case>
+        </switch>
+    </div>
+
+    <div class="detail-left">
+        <div class="chat-cont">
+            <div class="chat-tab-cont clear-float">
+                <a class="tab col-50 active" id="chat">聊天</a>
+                <a class="tab col-50" id="info">对方信息</a>
+            </div>
+            <div class="tab-chat" id="chating">
+                <div class="chating">
+                    <foreach name="chatlog" item="v">
+                        <if condition="$v['from'] == $_SESSION['mobile']">
+                            <if condition="$v.type == text">
+                                <div class="chat ta-r">
+                                       <span class="chat-message">{$v.content}
+                                           <span class="time">{$v.time|date='H:i',###}</span>
+                                       </span>
+                                    <img class="user-logo" src="__ROOT__{$Think.session.userid|getpic=###}" alt="">
+                                </div>
+                                <elseif condition="$v['type'] == pic"/>
+                                <div class="chat ta-r">
+                                       <span class="chat-message">
+                                        <img src="{$v.content}" alt="">
+                                        <span class="time">{$v.time|date='H:i',###}</span>
+                                       </span>
+                                    <img class="user-logo" src="__ROOT__{$Think.session.userid|getpic=###}" alt="">
+                                </div>
+                            </if>
+                            <elseif condition="$v['from'] == $name['mobile']"/>
+                            <if condition="$v.type == text">
+                                <div class="chat ta-l">
+                                    <img class="user-logo" src="__ROOT__{$name['id']|getpic=###}" alt="">
+                                    <span class="chat-message">{$v.content}<span class="time">{$v.time|date='H:i',###}</span></span>
+                                </div>
+                                <elseif condition="$v['type'] == pic"/>
+                                <div class="chat ta-l">
+                                    <img class="user-logo" src="__ROOT__{$name['id']|getpic=###}" alt="">
+                                    <span class="chat-message">
+                                     <img src="{$v.content}" alt="">
+                                   <span class="time">{$v.time|date='H:i',###}</span></span>
+                                </div>
+                            </if>
+                        </if>
+                    </foreach>
+                </div>
+                <div class="btn-cont">
+                    <div class="add-pic">
+                        <form action="###" id="form" method="post" enctype="multipart/form-data">
+                         <input type="file" accept="image/jpg,image/jpeg,image/png" class="img-input" name="file" id="image">
+                        </form>
+                    </div>
+                    <input class="message-input" type="text" name="" value="" placeholder="说点什么吧..." id="content">
+                    <a type="SELL" stage="PLACED_ORDER" class="icon-send send" id="Sell"></a>
+                </div>
+            </div>
+            <div class="tab-fellow-info hidden" id="user-info" >
+                <div>
+                    <img class="user-head" src="__ROOT__{$name.ue_img}">
+                    <a href="{:U('User/view',array('id'=>$sellinfo['id']))}" class="user-name">{$name.username}</a>
+                </div>
+                <div class="user-info ml-100">
+                    <div class="info-item">交易量: {$name['id']|getcjsl=###,$orderinfo['coin']} {$orderinfo['coin']|strtoupper} </div>
+                    <div class="info-item">已确认的交易次数:{$name['id']|getjycs=###} 次</div>
+                    <div class="info-item">好评度: {$name['id']|gethpl=###} %</div>
+                    <div class="info-item">用户创建时间: {$name.addtime|date='Y-m-d H:i:s',###}</div>
+                </div>
+                <div class="user-info">
+                    <div class="info-item"> 电话号码: {$name['mobile']?'已验证':'未验证'}</div>
+                    <div class="info-item"> 实名认证: {$name['truename']?'已验证':'未验证'}</div>
+                    <div class="info-item"> 信任: {$name['id']|getxrrs=###}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="detail-right">
+        <div class="form-title">
+            <span class="form-name">交易操作</span>
+        </div>
+        <div class="line mt-20 mb-10"></div>
+        <div class="font-16">订单编号</div>
+        <p class="p mb-10">{$orderinfo.id}</p>
+        <div class="font-16">付款方式</div>
+        <p class="p mb-10">
+
+            <switch name="orderinfo.fkfs" >
+                <case value="1"><td>银行转账</td></case>
+                <case value="2"><td>支付宝</td></case>
+                <case value="3"><td>微信支付</td></case>
+                <case value="4"><td>其它</td></case>
+            </switch>
+
+        </p>
+        <div class="font-16">广告留言</div>
+        <p class="p mb-10 has-height">{$intro}</p>
+
+
+        <div class="font-16" >交易提示</div>
+        <p class="p tips-buyer-1" >
+            1.对方的{$orderinfo['coin']|strtoupper}已被托管锁定，您需要在规定时间内完成付款并点击“标记付款已完成”按钮，否则交易将自动取消。<br>2.转账时请在留言附上订单编号，否则对方可能无法识别您的付款。
+        </p>
+        <p class="p tips-buyer-2" style="display: none">
+            您已标记付款完成，卖家在收到付款后将放行{$orderinfo['coin']|strtoupper}给您。可主动联系对方，沟通确认款项
+        </p>
+
+        <div class="btn-cont" id="btn-cont">
+
+
+                    <if condition="$Think.session.userid eq $orderinfo['buyid']">
+                        {$buy_button}
+                        <elseif condition="$Think.session.userid eq $orderinfo['sellid']"/>
+                        {$sell_button}
+                    </if>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<include file="Public:footer"/>
+
+<script>
+    $('#chat').click(function () {
+        $('#info').removeClass('active');
+        $('#user-info').addClass('hidden');
+        $('#chat').addClass('active');
+        $('#chating').removeClass('hidden');
+    })
+
+    $('#info').click(function () {
+        $('#chat').removeClass('active');
+        $('#chating').addClass('hidden');
+        $('#info').addClass('active');
+        $('#user-info').removeClass('hidden');
+    })
+
+    //取消
+    $('#khCancel').click(function () {
+        layer.confirm('您确定要取消并关闭该交易吗？如果已经向卖家付款，请不要取消交易。', {
+            btn: ['确定取消','关闭窗口'] //按钮
+        }, function(){
+            var orderid={$orderinfo['id']};
+            $.post('{:U("Order/ordercenter")}',{orderid:orderid},function (data) {
+                if(data.status){
+                    location.reload();
+                } else {
+                    layer.msg(data.info, {
+                        icon: 2
+                    });
+                }
+            })
+        });
+    });
+
+    //付款
+    $('#btnPay').click(function () {
+        layer.confirm('您是否确定已付款给对方？', {
+            btn: ['确定','关闭窗口'] //按钮
+        }, function(){
+            var orderid={$orderinfo['id']};
+            $.post('{:U("Order/bjfk")}',{orderid:orderid},function (data) {
+                if(data.status){
+                    location.reload();
+                } else {
+                    layer.msg(data.info, {
+                        icon: 2
+                    });
+                }
+            })
+        });
+    });
+
+    //释放
+    $('#release').click(function () {
+        layer.confirm('您是否确定已收到对方的付款？', {
+            btn: ['确定','关闭窗口'] //按钮
+        }, function(){
+            var orderid={$orderinfo['id']};
+            $.post('{:U("Order/shifang")}',{orderid:orderid},function (data) {
+                if(data.status){
+                    location.reload();
+                } else {
+                    layer.msg(data.info, {
+                        icon: 2
+                    });
+                }
+            })
+        });
+    });
+
+
+    /*评论*/
+    $(document).on('click','#btnComment',function () {
+        var orderid={$orderinfo['id']};
+        var feedback=$("input[name='feedback']:checked").val();
+        $.post('{:U("Order/pinglun")}',{orderid:orderid,feedback:feedback},function (data) {
+            if(data.status){
+                location.reload();
+            } else {
+                layer.msg(data.info, {
+                    icon: 2
+                });
+            }
+        })
+    });
+
+    /*申诉*/
+    $('#btnshensu').click(function () {
+        layer.confirm('您是否确定申诉？', {
+            btn: ['确定','关闭窗口'] //按钮
+        }, function(){
+            var orderid={$orderinfo['id']};
+            $.post('{:U("Order/shensu")}',{orderid:orderid},function (data) {
+                if(data.status){
+                    location.reload();
+                } else {
+                    layer.msg(data.info, {
+                        icon: 2
+                    });
+                }
+            });
+        });
+    });
+
+    /*ajax轮询*/
+    window.onload = function() {
+        oTimer = setInterval("change()",5000);
+    }
+    function change(){
+        var orderid={$orderinfo['id']};
+
+
+        $.post("{:U('Order/orderstatus')}",{orderid:orderid},function (data) {
+            if(data.status){
+                if(data.info==1){
+                    $('.stage-text').text('已付款');
+                    $('.status-decs').text('等待卖家确认收款后释放币');
+                }
+                if(data.info==2){
+                       <if condition="$Think.session.userid eq $orderinfo['buyid']">
+                            if($('.stage-text').text()=='已付款'){
+                            $('.stage-text').text('已收货');
+                            $('.status-decs').text('请对交易做出评价。');
+                            $('#btn-cont').html('<div class="comment" style="color: #0a0a0a">对用户<strong>{$name.username}</strong>留下评论?</div>'+
+                            '<div class="radio-cont">'+
+                            '<div class="fl"><input type="radio" checked name="feedback" value="POSITIVE" id="POSITIVE"><label for="POSITIVE">好评</label></div>'+
+                             ' <div class="fm"><input type="radio" name="feedback" value="NEUTRAL" id="NEUTRAL"><label for="NEUTRAL">中评</label></div>'+
+                             '<div class="fr"><input type="radio" name="feedback" value="NEGATIVE" id="NEGATIVE"><label for="NEGATIVE">差评</label></div>'+
+                             '</div><a class="btn" id="btnComment">提交评论</a>');
+                            }
+                       </if>
+
+                }
+                if(data.info==3){
+                    $('.stage-text').text('已结束');
+                    $('.status-decs').text('交易成功，双方已评价。');
+                    $('#btn-cont').html('');
+                }
+
+                if(data.info==4){
+                    $('.stage-text').text('已取消');
+                    $('.status-decs').text('交易已经取消。');
+                    $('#btn-cont').html('');
+                }
+
+                if(data.info==5){
+                    $('.stage-text').text('已申诉');
+                    $('.status-decs').text('交易正在申诉');
+                    $('#btn-cont').html('<a  class="btn" style="background: #31b0d5">申诉中</a>');
+                }
+
+                if(data.info==6){
+                    $('.stage-text').text('已关闭');
+                    $('.status-decs').text('此交易已超时关闭');
+                    $('#btn-cont').html('');
+                }
+            }else {
+                //若用户未付款更新订单有效时间
+                var attime = {$orderinfo['delaytime']*60+$orderinfo['addtime']};
+                var timestamp = (new Date()).getTime();
+                // 订单有效时间
+                var activetime = Math.ceil((attime-timestamp/1000)/60);
+
+                if(data.info=="错误")
+                {
+                    if(activetime>0)
+                    {
+                        $('.status-decs').html("订单将在托管中保存<span class='blue-text expiration'>"+activetime+"</span>分钟, 逾期未付款将自动取消");
+                    }else
+                    {
+                        //此交易已关闭，因为未及时将付款标记为完成。如果您已付款，请要求卖家重新打开交易。
+                        $('.status-decs').html("此交易已超时关闭");
+                    }
+
+                }
+
+
+            }
+        })
+    }
+</script>
+
+<script>
+	var target = new Array("{$_SESSION['target']}");
+	if(target[0] === 'Array'){
+		$('#orderPrompt').prepend(function(){
+			if(!($(this).children('#remind').html())){
+				var str = '<div id="remind" style="color:#fff;font-weight:800;background:#fa0;width:20px;height:20px;border-radius:20px;position:absolute;top:-0px;text-align:center;right:0px;">!</div>';
+				return str;
+			}
+		});
+	}
+    // 消息监听器
+    RongIMClient.setOnReceiveMessageListener({
+        // 接收到的消息
+        onReceived: function (message) {
+			var targetId = message.targetId;
+			var id = "{$id}";
+			if(!(targetId == id)){
+				$.post('http://192.168.153.133/Index/ajaxAddTID',{targetId:targetId},function(){
+					
+				});
+				//	动画提示
+				$('#orderPrompt').prepend(function(){
+					if(!($(this).children('#remind'))){
+						var str = '<div id="remind" style="color:#fff;font-weight:800;background:#fa0;width:20px;height:20px;border-radius:20px;position:absolute;top:-0px;text-align:center;right:0px;">!</div>';
+						return str;
+					}
+				});
+			}
+			RongIMClient.getInstance().getTotalUnreadCount({
+				onSuccess:function(count){
+					console.log(count);
+				 // count => 所有会话总未读数。
+				},
+				onError:function(error){
+					console.log(error);
+				 // error => 获取总未读数错误码。
+				}
+			});
+			console.log('true');
+            // 判断消息类型
+            switch(message.messageType){
+                case RongIMClient.MessageType.TextMessage:
+                    if(message.senderUserId == {$name.id}){
+                    if(message.content.extra>Math.round(new Date().getTime()/1000)-3) {
+                        var mydate2 = new Date();
+                        var time2 = mydate2.getHours();
+                        time2 += ':' + mydate2.getMinutes();
+                        $('.chating').append('<div class="chat ta-l"> <img class="user-logo" src="__ROOT__{$name.id|getpic=###}" alt="" /> <span class="chat-message">' + message.content.content + '<span class="time">' + time2 + '</span></span></div>');
+                        $('.chating')[0].scrollTop = $('.chating')[0].scrollHeight;
+                    }
+                }
+                    break;
+
+                case RongIMClient.MessageType.ImageMessage:
+                    // message.content.imageUri => 原图 URL。
+                    if(message.senderUserId == {$name.id})
+                        {
+                            if(message.content.extra>Math.round(new Date().getTime()/1000)-3) {
+                                var mydate4 = new Date();
+                                var time4 = mydate4.getHours();
+                                time4 += ':' + mydate4.getMinutes();
+                                $('.chating').append('<div class="chat ta-l"> <img class="user-logo" src="__ROOT__{$name.id|getpic=###}" alt="" /> <span class="chat-message"><img src="' + message.content.imageUri + '" alt=""><span class="time">' + time4 + '</span></span></div>');
+                                $('.chating')[0].scrollTop = $('.chating')[0].scrollHeight;
+                            }
+                        }
+                    break;
+                default:
+                // do something...
+            }
+        }
+    });
+    function getMessage(content){
+        // 定义消息类型,文字消息使用 RongIMLib.TextMessage
+
+        var msg = new RongIMLib.TextMessage({content:content,extra:Math.round(new Date().getTime()/1000)});
+        var conversationtype = RongIMLib.ConversationType.PRIVATE; // 私聊
+        var targetId = "{$name['id']}"; // 目标 Id
+        RongIMClient.getInstance().sendMessage(conversationtype, targetId, msg, {
+                onSuccess: function (message) {
+                    $.post('{:U("Order/chatlog")}',{
+                        from: '{$Think.session.mobile}',
+                        to: '{$name.mobile}',
+                        content : content,
+                        type : 'text',
+                        order_id : '{$orderinfo.id}',
+                    },function (data) {
+                        if(data.status){
+                            var mydate = new Date();
+                            var time1=mydate.getHours();
+                            time1+=':'+mydate.getMinutes();
+                            $('.chating').append('<div class="chat ta-r"><span class="chat-message">'+content+'<span class="time">'+time1+'</span></span> <img class="user-logo" src="__ROOT__{$Think.session.userid|getpic=###}" alt=""></div>');
+                            $("#content").val("").focus();
+                            $('.chating')[0].scrollTop=$('.chating')[0].scrollHeight;
+                        } else {
+                            layer.msg(data.info, {
+                                icon: 2
+                            });
+                        }
+                    });
+                },
+                onError: function (errorCode, message) {
+                    var info = '';
+                    switch (errorCode) {
+                        case RongIMLib.ErrorCode.TIMEOUT:
+                            info = '超时';
+                            break;
+                        case RongIMLib.ErrorCode.UNKNOWN_ERROR:
+                            info = '未知错误';
+                            break;
+                        case RongIMLib.ErrorCode.REJECTED_BY_BLACKLIST:
+                            info = '在黑名单中，无法向对方发送消息';
+                            break;
+                        case RongIMLib.ErrorCode.NOT_IN_DISCUSSION:
+                            info = '不在讨论组中';
+                            break;
+                        case RongIMLib.ErrorCode.NOT_IN_GROUP:
+                            info = '不在群组中';
+                            break;
+                        case RongIMLib.ErrorCode.NOT_IN_CHATROOM:
+                            info = '不在聊天室中';
+                            break;
+                        default :
+                            info = "x";
+                            break;
+                    }
+                }
+            }
+        );
+    }
+
+
+    $('#Sell').click(function () {
+        var content = $('#content').val();
+        if(content == ''){
+            layer.msg('发送消息不能为空', {
+                icon: 2
+            });
+            return false;
+        } else {
+            getMessage(content);
+        }
+
+    });
+
+    /*回车发送消息*/
+    $("#content").keydown(function(event){
+        if(event.keyCode==13){
+            $("#Sell").click();
+        }
+    })
+
+    $("#image").change(function  () {
+        var formData = new FormData($("#form")[0]);
+        formData.append('from',{$Think.session.mobile});
+        formData.append('to',{$name.mobile});
+        formData.append('order_id',{$orderinfo.id});
+        formData.append('type','pic');
+        $.ajax({
+            url: "{:U('Order/chatlog')}",
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                var imageUri = data.info; // 上传到自己服务器的 URL。
+                var msg = new RongIMLib.ImageMessage({imageUri:imageUri,extra:Math.round(new Date().getTime()/1000)});
+                var conversationtype = RongIMLib.ConversationType.PRIVATE; // 单聊,其他会话选择相应的消息类型即可。
+                var targetId = "{$name.id}"; // 目标 Id
+                RongIMClient.getInstance().sendMessage(conversationtype, targetId, msg, {
+                        onSuccess: function (message) {
+                            //message 为发送的消息对象并且包含服务器返回的消息唯一Id和发送消息时间戳
+                            if(data.status){
+                                var mydate3 = new Date();
+                                var time3=mydate3.getHours();
+                                time3+=':'+mydate3.getMinutes();
+                                $('.chating').append('<div class="chat ta-r"><span class="chat-message"><img src="'+imageUri+'" alt=""><span class="time">'+time3+'</span></span> <img class="user-logo" src="__ROOT__{$Think.session.userid|getpic=###}" alt=""></div>');
+                                $('.chating')[0].scrollTop=$('.chating')[0].scrollHeight;
+                            } else {
+                                layer.msg(data.info, {
+                                    icon: 2
+                                });
+                            }
+                            console.log("Send successfully");
+                        },
+                        onError: function (errorCode,message) {
+                            var info = '';
+                            switch (errorCode) {
+                                case RongIMLib.ErrorCode.TIMEOUT:
+                                    info = '超时';
+                                    break;
+                                case RongIMLib.ErrorCode.UNKNOWN_ERROR:
+                                    info = '未知错误';
+                                    break;
+                                case RongIMLib.ErrorCode.REJECTED_BY_BLACKLIST:
+                                    info = '在黑名单中，无法向对方发送消息';
+                                    break;
+                                case RongIMLib.ErrorCode.NOT_IN_DISCUSSION:
+                                    info = '不在讨论组中';
+                                    break;
+                                case RongIMLib.ErrorCode.NOT_IN_GROUP:
+                                    info = '不在群组中';
+                                    break;
+                                case RongIMLib.ErrorCode.NOT_IN_CHATROOM:
+                                    info = '不在聊天室中';
+                                    break;
+                                default :
+                                    info = x;
+                                    break;
+                            }
+                            console.log('发送失败:' + info);
+                        }
+                    }
+                );
+            },
+            error: function (data) {
+
+            }
+        });
+
+    });
+</script>

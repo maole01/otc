@@ -1,0 +1,72 @@
+<include file="Public:header"/>
+
+<include file="Setting:left"/>
+
+<div class="fr">
+<div class="setting-title">安全设置>解除绑定谷歌验证</div>
+<div class="setting-panel google-auth ta-c">
+    <div class="mb-25">请输入6位数谷歌验证码</div>
+    <span class="gg-code-input">
+        <input type="number" maxlength="1" class="gg-input">
+        <input type="number" maxlength="1" class="gg-input">
+        <input type="number" maxlength="1" class="gg-input">
+        <input type="number" maxlength="1" class="gg-input">
+        <input type="number" maxlength="1" class="gg-input">
+        <input type="number" maxlength="1" class="gg-input">
+      </span>
+    <br/>
+    <div class="btn submit">解除</div>
+</div>
+</div>
+</div>
+
+<include file="Public:footer"/>
+
+<script>
+    $(document).ready(function() {
+        var txts = $(".gg-code-input input");
+        for (var i = 0; i < txts.length; i++) {
+            var t = txts[i];
+            t.index = i;
+            t.setAttribute("readonly", true);
+            t.onkeyup = function() {
+                this.value = this.value.replace(/^(.).*$/, '$1');
+                var next = this.index + 1;
+                if (next > txts.length - 1) return;
+                txts[next].removeAttribute("readonly");
+                txts[next].focus();
+            }
+        }
+        txts[0].removeAttribute("readonly");
+    });
+
+    $('.submit').click(function () {
+        var code='';
+        $('.gg-input').each(function () {
+            if($(this).val() == ''){
+                layer.msg('请输入6位谷歌验证码', {
+                    icon: 2
+                });
+                throw SyntaxError();
+            } else {
+                code+=$(this).val();
+            }
+        });
+        $.post('{:U("Setting/jcgoogle")}',{code:code},function (data) {
+            if(data.status){
+                layer.msg(data.info, {
+                    icon: 1
+                },function () {
+                    location.href="{:U('Setting/options')}";
+                });
+            } else {
+                layer.msg(data.info, {
+                    icon: 2
+                });
+            }
+        });
+
+    })
+</script>
+
+

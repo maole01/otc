@@ -1,0 +1,77 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__ROOT__/Public/static/css/order-list.css">
+<div class="container order-container">
+    <div class="page-title">订单管理</div>
+    <div class="tabs clear-float mt-20">
+        <a href="{:U('Order/lists',array('type'=>'going'))}" class="tab actived">进行中</a><span class="br"></span>
+        <div class="tab ">
+            <span class="down-arrow">已结束 </span>
+            <div class="more-item">
+                <a href="{:U('Order/lists',array('type'=>'ending'))}" class="item">BTC</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-list">
+        <div class="list-header clear-float mb-10">
+            <span class="header-text width-1">交易伙伴</span>
+            <span class="header-text width-2">订单编号</span>
+            <span class="header-text width-3">类型</span>
+            <span class="header-text width-4">交易金额</span>
+            <span class="header-text width-5">交易数量</span>
+            <span class="header-text width-6">创建时间</span>
+            <span class="header-text width-7">交易状态</span>
+
+        </div>
+
+        <foreach name="list" item="v">
+        <div class="data-row clear-float" id="uid_{$v.yjhb}">
+          <span class="width-1 data-text">
+            <a class="link" href="{:U('User/view',array('id'=>$v['yjhb']))}"><img class="avatar" src="__ROOT__{$v['ue_img']}" alt=""></a>
+            <a href="{:U('User/view',array('id'=>$v['yjhb']))}" class="username link">{$v.username}</a>
+          </span>
+            <span class="width-2 data-text">
+            <a href="{:U('Order/detail',array('id'=>$v['id']))}" class="link">{$v.id}</a>
+          </span>
+            <span class="width-3 data-text">
+                <if condition="$v.buyid eq $_SESSION['userid']">
+                      购买
+                 <else/>
+                      出售
+                </if>
+               {$v.coin|strtoupper}</span>
+            <span class="width-4 data-text">{$v.amount}</span>
+            <span class="width-5 data-text">{$v.num} {$v.coin|strtoupper}</span>
+            <span class="width-6 data-text">{$v.addtime|date='Y-m-d H:i:s',###}</span>
+            <span class="width-7 data-text red-text">
+                <switch name="v.status">
+                        <case value="0">未付款</case>
+                        <case value="1">已付款</case>
+                        <case value="2">已释放</case>
+                        <case value="3">交易完成</case>
+                        <case value="4">取消交易</case>
+                        <case value="5">申诉中</case>
+                        <case value="6">订单超时</case>
+
+                </switch>
+            </span>
+            <span class="width-7 data-text red-text"><a class="btn btn-comment" href="{:U('Order/detail',array('id'=>$v['id']))}">交易操作</a></span>
+        </div>
+        </foreach>
+
+
+  </div>
+
+    <div class="page1">{$page}</div>
+  </div>
+
+
+</div>
+<script>
+	<?php
+		foreach($_SESSION['target'] as $id => $t){
+			echo '$("#uid_'.$id.'").append("<span class='."'".'targetDiv'."'".'>'.$t.'条消息未读</span>").css("position","relative");';
+		}
+	?>
+</script>
+<include file="Public:footer"/>

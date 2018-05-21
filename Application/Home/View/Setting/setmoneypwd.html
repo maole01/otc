@@ -1,0 +1,65 @@
+<include file="Public:header"/>
+<include file="Setting:left"/>
+
+<div class="fr right-wrap">
+    <div class="setting-title">安全设置>修改资金密码</div>
+    <div class="setting-panel">
+
+
+        <div class="form-cont" id="step1">
+            <div class="form-text">资金密码将用于比特币的提款，保护您的比特币不被他人轻易盗用，<font color="red">请输入6-16位字母、数字或组合</font></div>
+            <div class="input-cont">
+                <span class="icon form-password"></span>
+                <input class="input" onfocus="this.type='password'" validate check-type="password" name="password" autocomplete="off" placeholder="输入新资金密码">
+
+                <div class="form-tips"></div>
+            </div>
+            <div class="input-cont">
+                <span class="icon form-password"></span>
+                <input class="input" onfocus="this.type='password'" validate check-type="password" name="password2" autocomplete="off" placeholder="请再次输入新密码">
+                <div class="form-tips"></div>
+                <div class="error-msg">两次密码不一致</div>
+            </div>
+            <a id="btnChange" class="btn submit" onclick="moneypwd()">确定</a>
+            <!-- <a href="" class="link forgot-pw">忘记资金密码</a>-->
+        </div>
+    </div>
+</div>
+</div>
+
+<include file="Public:footer"/>
+
+<script>
+    function moneypwd() {
+        var moneypwd = /^[a-zA-Z0-9]{6,16}$/;
+        if (!moneypwd.test($("input[name=password]").val())) {
+                 layer.msg('密码格式不正确');
+                 return false;
+        }
+
+        if ($("input[name=password]").val()!=$("input[name=password2]").val()) {
+                 layer.msg('两次密码不一致');
+                 return false
+        }
+
+        var moneypwd=$("input[name=password]").val();
+        var moneypwd2=$("input[name=password2]").val();
+
+        $.post('{:U("Setting/setmoneypwd")}',{moneypwd:moneypwd,moneypwd2:moneypwd2},function (data) {
+                if(data.status==1){
+                    layer.msg(data.info, {
+                        icon: 1
+                    },function () {
+                        location.href="{:U('Setting/options')}";
+                    });
+                } else{
+                    layer.msg(data.info, {
+                        icon: 2
+                    });
+                }
+        });
+
+
+    }
+    
+</script>

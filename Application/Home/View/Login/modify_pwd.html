@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>找回密码</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="coincola, bitcoin, Bitcoin, OTC, CoinCola, 比特币, 可盈可乐, 场外交易, 比特币买卖, p2p, 区块链, blockchain, localbitcoins">
+    <meta name="description" content="一个自由买卖安全可信赖的比特币交易平台">
+    <link rel="shortcut icon" href="/static/imgs/favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="coincola, bitcoin, Bitcoin, OTC, CoinCola, 比特币, 可盈可乐, 场外交易, 比特币买卖, p2p, 区块链, blockchain, localbitcoins">
+    <meta name="description" content="一个自由买卖安全可信赖的比特币交易平台">
+    <link rel="shortcut icon" href="__ROOT__/Public/static/imgs/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="__ROOT__/Public/static/css/common_2aed4bc732.css">
+    <link rel="stylesheet" href="__ROOT__/Public/static/css/signup_300e4ac5b5.css">
+    <script src="__ROOT__/Public/jquery/jquery.min.js"></script>
+    <script src="__ROOT__/Public/layui/layer.js"></script>
+
+</head>
+<body class="bg-white">
+<div class="header header-xl">
+    <div class="container clear-float">
+        <a href="/"><span class="logo-b"></span></a>
+        <div class="xl-logo">
+            <h1 class="xl-title">密码重置</h1>
+            <h3 class="xl-decs">请按要求设置您的新密码</h3>
+        </div>
+        <div class="opt">
+            <div class="opt-line"></div>
+            <div class="opt-line"></div>
+            <div class="opt-line"></div>
+        </div>
+    </div>
+</div>
+<div class="clear pt-20 login-form container">
+    <form class="form-cont" method="post" action="{:U('Login/modify_pwd')}" id="form">
+        <div class="input-cont">
+            <!-- <span class="icon form-password"></span> -->
+            <input class="input" onfocus="this.type='password'" validate check-type="password" name="password" placeholder="请输入密码(6~16个字符或字母组成)" onblur="regpassword()">
+            <div class="form-tips"></div>
+            <div class="error-msg">请输入6-16位字母、数字或组合</div>
+        </div>
+        <div class="input-cont">
+            <!-- <span class="icon form-password"></span> -->
+            <input class="input" onfocus="this.type='password'" validate check-type="password" name="confirm_password" placeholder="请再次输入密码" onblur="regpassword2()">
+            <div class="form-tips"></div>
+            <div class="error-msg">请输入6-16位字母、数字或组合</div>
+        </div>
+        <a id="submit" class="btn submit" onclick="checkform()">完成</a>
+    </form>
+
+</div>
+<include file="Public:footer"/>
+
+</body>
+<html>
+
+<script>
+    function regpassword() {
+        var mbtest_password = /^[a-zA-Z0-9]{6,21}$/;
+        if (mbtest_password.test($("input[name=password]").val())) {
+            $("input[name=password]").next().next().css('display','none');
+            return true;
+        } else {
+            $("input[name=password]").next().next().css('display','block');
+            return false;
+        }
+    }
+
+    function regpassword2() {
+        var mbtest_password = /^[a-zA-Z0-9]{6,21}$/;
+        if (mbtest_password.test($("input[name=confirm_password]").val())) {
+            $("input[name=confirm_password]").next().next().css('display','none');
+            return true;
+        } else {
+            $("input[name=confirm_password]").next().next().css('display','block');
+            return false;
+        }
+    }
+
+    function checkform() {
+        var password=$('[name=password]').val();
+        var password2=$('[name=confirm_password]').val();
+
+        if(!regpassword()){
+            return false;
+        }
+
+        if(!regpassword2()){
+            return false;
+        }
+
+        if(password != password2){
+            layer.msg('两次密码不一致', {
+                icon: 2
+            });
+        }
+
+        $('#form').submit();
+
+
+    }
+    $('.opt').on('click',function(){
+        console.log(1)
+        $(this).siblings('.nav').slideToggle()
+    })
+
+
+</script>

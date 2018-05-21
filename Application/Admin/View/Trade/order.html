@@ -1,0 +1,294 @@
+<include file="Public:header"/>
+
+<div id="main-content">
+
+    <div id="top-alert" class="fixed alert alert-error" style="display: none;">
+
+        <button class="close fixed" style="margin-top: 4px;">&times;</button>
+
+        <div class="alert-content">警告内容</div>
+
+    </div>
+
+    <style>
+        .dropbtn {
+            background-color: #1abc9c;
+            color: white;
+            padding: 16px;
+            /*font-size: 16px;*/
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            z-index: 1000;
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        .data-table {
+            margin: 10px 0;
+            overflow-y: inherit;
+        }
+    </style>
+    <div id="main" class="main">
+
+        <div class="main-title-h">
+
+            <span class="h1-title">订单管理</span>
+
+        </div><div class="cf">
+
+        <div class="fl"></div>
+
+        <div class="search-form fr cf">
+
+            <div class="sleft">
+
+                <form name="formSearch" id="formSearch" method="get" name="form1">
+
+                    <select style="width: 160px; float: left; margin-right: 10px;" name="type" class="form-control">
+
+                        <option value=""
+
+                        <empty name="Think.get.type">selected</empty>
+
+                        >交易类型</option>
+
+                        <option value="1" <eq name="Think.get.type" value="1">selected</eq>>购买</option>
+
+                        <option value="2" <eq name="Think.get.type" value="2">selected</eq>>出售</option>
+
+                    </select>
+
+                    <select style="width: 160px; float: left; margin-right: 10px;" name="status" class="form-control">
+
+                        <option value=""
+
+                        <empty name="Think.get.status">selected</empty>
+
+                        >订单状态</option>
+
+                        <option value="1" <eq name="Think.get.status" value="1">selected</eq>>交易中</option>
+
+                        <option value="2" <eq name="Think.get.status" value="2">selected</eq>>已付款</option>
+
+                        <option value="3" <eq name="Think.get.status" value="3">selected</eq>>已释放</option>
+
+                        <option value="4" <eq name="Think.get.status" value="4">selected</eq>>交易完成</option>
+
+                        <option value="5" <eq name="Think.get.status" value="5">selected</eq>>交易取消</option>
+
+                        <option value="6" <eq name="Think.get.status" value="6">selected</eq>>申诉中</option>
+
+                        <option value="7" <eq name="Think.get.status" value="7">selected</eq>>订单超时</option>
+
+                    </select>
+<!--
+                    <select style=" width: 160px; float: left; margin-right: 10px;" name="field" class="form-control">
+
+                        <option value="username"
+
+                        <eq name="Think.get.field" value="username">selected</eq>
+
+                        >用户名</option>
+
+                    </select>
+-->
+                    <input type="text" name="name" class="search-input form-control  " value="{$Think.get.name}" placeholder="请输入查询内容" style="">
+
+                    <a class="sch-btn" href="javascript:;" id="search"> <i class="btn-search"></i> </a>
+
+                </form>
+
+                <script>
+
+                    //搜索功能
+
+                    $(function () {
+
+                        $('#search').click(function () {
+
+                            $('#formSearch').submit();
+
+                        });
+
+                    });
+
+                    //回车搜索
+
+                    $(".search-input").keyup(function (e) {
+
+                        if (e.keyCode === 13) {
+
+                            $("#search").click();
+
+                            return false;
+
+                        }
+
+                    });
+
+                </script>
+
+            </div>
+
+        </div>
+
+    </div>
+
+        <div class="data-table table-striped">
+
+            <table class="">
+
+                <thead>
+
+                <tr>
+
+                    <th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
+
+                    <th class="">ID</th>
+
+                    <th class="">出售人</th>
+
+                    <th class="">购买人</th>
+
+                    <th class="">类型</th>
+
+                    <th class="">币种</th>
+
+                    <th class="">价格</th>
+
+                    <th class="">数量</th>
+
+                    <th class="">手续费</th>
+
+                    <th class="">时间</th>
+
+                    <th class="">状态</th>
+
+                    <th class="">操作</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <notempty name="list">
+
+                    <volist name="list" id="vo">
+
+                        <tr>
+
+                            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}"/></td>
+
+                            <td>{$vo.id}</td>
+
+                            <td>{$vo['sellname']}</td>
+
+                            <td>{$vo['buyname']}</td>
+
+                            <td>{$vo['type']?'出售':'购买'}</td>
+
+                            <td>btc</td>
+
+                            <td>{$vo['price']}</td>
+
+
+                            <td>{$vo.num}</td>
+
+                            <td>{$vo.fee}</td>
+
+                            <td>{$vo.addtime|addtime}</td>
+
+                                <td>
+                                    <switch name="vo.status">
+                                    <case value="0">未付款</case>
+                                    <case value="1">已付款</case>
+                                    <case value="2">已释放</case>
+                                    <case value="3">交易完成</case>
+                                    <case value="4">交易取消</case>
+                                    <case value="5">申诉中</case>
+                                    <case value="6">订单超时</case>
+                                    </switch>
+                                </td>
+
+                            <td>
+                                <a href="{:U('Trade/chatlog?id='.$vo['id'])}" class=" btn btn-primary btn-xs">查看聊天记录</a>
+                                <if condition="$vo.status == 5">
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary btn-xs">修改状态</button>
+                                        <div class="dropdown-content">
+                                            <a href="{:U('Trade/reset?id='.$vo['id'])}">重启交易</a>
+                                            <a href="{:U('Trade/quit?id='.$vo['id'])}">取消交易</a>
+                                            <a href="{:U('Trade/end?id='.$vo['id'])}">完成交易</a>
+                                        </div>
+                                    </div>
+                                </if>
+
+                            </td>
+
+                        </tr>
+
+                    </volist>
+
+                    <else/>
+
+                    <td colspan="12" class="text-center">Oh! 暂时还没有内容!</td>
+
+                </notempty>
+
+                </tbody>
+
+            </table>
+
+            <div class="page">
+
+                <div>{$page}</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<include file="Public:footer"/>
+
+<block name="script">
+
+    <script type="text/javascript" charset="utf-8">
+
+        //导航高亮
+
+        highlight_subnav("{:U('Trade/index')}");
+
+    </script>
+
+</block>
