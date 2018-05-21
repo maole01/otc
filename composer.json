@@ -1,0 +1,13 @@
+{
+    "name": "maole01/otc",
+    "description": "test",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":{
+    	"psr-4":{
+		"otc\\": "otc/"
+    	}
+    }
+}
